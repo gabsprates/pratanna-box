@@ -6,15 +6,19 @@ import React, {
   useCallback,
 } from "react";
 import "./App.css";
+import github from "./github.svg";
 import db from "./db";
 
 function App() {
-  const initialLevel = +(localStorage.getItem("level") || 0);
-  const [current, setCurrent] = useState(initialLevel);
+  const [current, setCurrent] = useState(0);
+  useLayoutEffect(() => {
+    const initialLevel = +(localStorage.getItem("level") || 0);
+    setCurrent(initialLevel);
+  }, []);
   const levels = db.split("---");
 
-  const handleClick = (e: any) => {
-    setCurrent(+e.target.dataset.level);
+  const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
+    setCurrent(+e.target.value);
   };
 
   const onFinish = useCallback(
@@ -29,32 +33,36 @@ function App() {
   return (
     <div className="app">
       <div className="app-container">
-        <aside className="app-list">
-          <h1>pratanna-box</h1>
-          <a
-            href="https://github.com/gabsprates/pratanna-box/"
-            title="go to github repo"
-            className="app-link"
-          >
-            go to github repo
-          </a>
-          <h2>levels:</h2>
-          <ul>
-            {levels.map((level, index) => (
-              <li
-                key={level}
-                onClick={handleClick}
-                data-level={index}
-                className={getCssClass(
-                  "app-level",
-                  index === current ? "app-level--selected" : ""
-                )}
-              >
-                {index + 1}
-              </li>
-            ))}
-          </ul>
-        </aside>
+        <header className="app-header">
+          <div className="app-header-top">
+            <h1>pratanna-box</h1>
+            <a
+              rel="noopener noreferrer"
+              href="https://github.com/gabsprates/pratanna-box/"
+              title="go to github repo"
+              target="_blank"
+              className="app-link"
+            >
+              <img src={github} alt="github logo" width="30" height="30" />
+            </a>
+          </div>
+
+          <div className="app-list">
+            <h2>levels:</h2>
+            <select
+              name="level"
+              value={current}
+              onChange={handleChange}
+              className="app-select"
+            >
+              {levels.map((level, index) => (
+                <option key={level} value={index}>
+                  {index + 1}
+                </option>
+              ))}
+            </select>
+          </div>
+        </header>
         <main className="app-board">
           <Game setup={levels[current]} onFinish={onFinish} />
         </main>
@@ -260,8 +268,6 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
     </React.Fragment>
   );
 };
-
-const getCssClass = (...arr: string[]) => arr.filter(Boolean).join(" ");
 
 const chars = {
   target: ".",
