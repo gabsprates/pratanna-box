@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app {
   color: white;
+  height: calc(100vh - 1px);
+  font-size: 16px;
+  padding-top: 1px;
+  background-color: #282c34;
 }
 
-.App-link {
+.app-container {
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  max-width: 800px;
+  align-items: center;
+}
+
+.app-list {
+  width: 180px;
+  height: 100%;
+}
+.app-list ul,
+.app-level {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-list ul {
+  display: flex;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+.app-level {
+  width: 25%;
+  text-align: center;
+  line-height: 1.8;
+}
+.app-level--selected {
+  background-color: #393d45;
+}
+.app-level:hover {
+  background-color: #4a4e56;
+}
+
+.app-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-board {
+  display: flex;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #060a12;
+}
+
+.app-stage {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+.app-stage td {
+  width: 30px;
+  height: 30px;
+}
+
+.app-stage-wall {
+  box-shadow: 0 0 0 2px #424242 inset;
+  background-size: 12.73px 12.73px;
+  background-image: linear-gradient(
+    135deg,
+    #424242 33.33%,
+    #212121 33.33%,
+    #212121 50%,
+    #424242 50%,
+    #424242 83.33%,
+    #212121 83.33%,
+    #212121 100%
+  );
+}
+
+.app-stage-target {
+  background: radial-gradient(circle, #e6d700 30%, rgb(0, 0, 0) 35%);
+}
+
+.app-stage-player {
+  background-size: contain;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAYAAABmBXS+AAAAKElEQVQYlWNgQAYXnf7DMU5APUUwhQRNQMekmUSSIpgCoq3BqhCPIgBWyzPDlvpEvAAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.app-stage-player--target {
+  background-size: contain;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAYAAABmBXS+AAAAOElEQVQYlWNgQALnGTT/wzADLkAdRc+uM/x/dp3h/3kGzf8wNk4T0DFpJpGkCKYARmP1GT4+QUUAN+xaJDUTozYAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.app-stage-box {
+  box-shadow: 0 0 0 2px #e6d700 inset;
+  background-size: 8.49px 8.49px;
+  background-image: linear-gradient(
+    45deg,
+    #e6d700 25%,
+    #000000 25%,
+    #000000 50%,
+    #e6d700 50%,
+    #e6d700 75%,
+    #000000 75%,
+    #000000 100%
+  );
+}
+.app-stage-box--target {
+  box-shadow: 0 0 0 2px #a80505 inset;
+  background-size: 8.49px 8.49px;
+  background-image: linear-gradient(
+    45deg,
+    #a80505 25%,
+    #000000 25%,
+    #000000 50%,
+    #a80505 50%,
+    #a80505 75%,
+    #000000 75%,
+    #000000 100%
+  );
 }
