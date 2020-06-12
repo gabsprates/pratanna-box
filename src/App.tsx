@@ -82,133 +82,125 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
   const [boxes, setBoxesPosition] = useState<BoxesObj>(game.boxes);
   useLayoutEffect(() => setBoxesPosition({ ...game.boxes }), [game.boxes]);
 
-  useEffect(() => {
-    const canMove: { [key: string]: () => boolean } = {
-      ArrowUp: () => {
-        const position = { ...player, y: player.y - 1 };
-        if (game.stage[position.y][position.x] === chars.wall) return false;
-        if (!boxes[`${position.x},${position.y}`]) return true;
+  const canMove: { [key: string]: () => boolean } = {
+    ArrowUp: () => {
+      const position = { ...player, y: player.y - 1 };
+      if (game.stage[position.y][position.x] === chars.wall) return false;
+      if (!boxes[`${position.x},${position.y}`]) return true;
 
+      const boxPosition = { ...position, y: position.y - 1 };
+      if (
+        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
+        !boxes[`${boxPosition.x},${boxPosition.y}`]
+      ) {
+        return true;
+      }
+
+      return false;
+    },
+    ArrowLeft: () => {
+      const position = { ...player, x: player.x - 1 };
+      if (game.stage[position.y][position.x] === chars.wall) return false;
+      if (!boxes[`${position.x},${position.y}`]) return true;
+
+      const boxPosition = { ...position, x: position.x - 1 };
+      if (
+        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
+        !boxes[`${boxPosition.x},${boxPosition.y}`]
+      ) {
+        return true;
+      }
+
+      return false;
+    },
+    ArrowDown: () => {
+      const position = { ...player, y: player.y + 1 };
+      if (game.stage[position.y][position.x] === chars.wall) return false;
+      if (!boxes[`${position.x},${position.y}`]) return true;
+
+      const boxPosition = { ...position, y: position.y + 1 };
+      if (
+        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
+        !boxes[`${boxPosition.x},${boxPosition.y}`]
+      ) {
+        return true;
+      }
+
+      return false;
+    },
+    ArrowRight: () => {
+      const position = { ...player, x: player.x + 1 };
+      if (game.stage[position.y][position.x] === chars.wall) return false;
+      if (!boxes[`${position.x},${position.y}`]) return true;
+
+      const boxPosition = { ...position, x: position.x + 1 };
+      if (
+        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
+        !boxes[`${boxPosition.x},${boxPosition.y}`]
+      ) {
+        return true;
+      }
+
+      return false;
+    },
+  };
+
+  const movements: { [key: string]: () => void } = {
+    ArrowUp: () => {
+      const position = { ...player, y: player.y - 1 };
+      setPlayerPosition({ ...position });
+      if (boxes[`${position.x},${position.y}`]) {
         const boxPosition = { ...position, y: position.y - 1 };
-        if (
-          game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-          !boxes[`${boxPosition.x},${boxPosition.y}`]
-        ) {
-          return true;
-        }
-
-        return false;
-      },
-      ArrowLeft: () => {
-        const position = { ...player, x: player.x - 1 };
-        if (game.stage[position.y][position.x] === chars.wall) return false;
-        if (!boxes[`${position.x},${position.y}`]) return true;
-
+        setBoxesPosition({
+          ...boxes,
+          [`${position.x},${position.y}`]: 0,
+          [`${boxPosition.x},${boxPosition.y}`]:
+            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
+        });
+      }
+    },
+    ArrowLeft: () => {
+      const position = { ...player, x: player.x - 1 };
+      setPlayerPosition({ ...position });
+      if (boxes[`${position.x},${position.y}`]) {
         const boxPosition = { ...position, x: position.x - 1 };
-        if (
-          game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-          !boxes[`${boxPosition.x},${boxPosition.y}`]
-        ) {
-          return true;
-        }
-
-        return false;
-      },
-      ArrowDown: () => {
-        const position = { ...player, y: player.y + 1 };
-        if (game.stage[position.y][position.x] === chars.wall) return false;
-        if (!boxes[`${position.x},${position.y}`]) return true;
-
+        setBoxesPosition({
+          ...boxes,
+          [`${position.x},${position.y}`]: 0,
+          [`${boxPosition.x},${boxPosition.y}`]:
+            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
+        });
+      }
+    },
+    ArrowDown: () => {
+      const position = { ...player, y: player.y + 1 };
+      setPlayerPosition({ ...position });
+      if (boxes[`${position.x},${position.y}`]) {
         const boxPosition = { ...position, y: position.y + 1 };
-        if (
-          game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-          !boxes[`${boxPosition.x},${boxPosition.y}`]
-        ) {
-          return true;
-        }
-
-        return false;
-      },
-      ArrowRight: () => {
-        const position = { ...player, x: player.x + 1 };
-        if (game.stage[position.y][position.x] === chars.wall) return false;
-        if (!boxes[`${position.x},${position.y}`]) return true;
-
+        setBoxesPosition({
+          ...boxes,
+          [`${position.x},${position.y}`]: 0,
+          [`${boxPosition.x},${boxPosition.y}`]:
+            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
+        });
+      }
+    },
+    ArrowRight: () => {
+      const position = { ...player, x: player.x + 1 };
+      setPlayerPosition({ ...position });
+      if (boxes[`${position.x},${position.y}`]) {
         const boxPosition = { ...position, x: position.x + 1 };
-        if (
-          game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-          !boxes[`${boxPosition.x},${boxPosition.y}`]
-        ) {
-          return true;
-        }
+        setBoxesPosition({
+          ...boxes,
+          [`${position.x},${position.y}`]: 0,
+          [`${boxPosition.x},${boxPosition.y}`]:
+            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
+        });
+      }
+    },
+  };
 
-        return false;
-      },
-    };
-
-    const movements: { [key: string]: () => void } = {
-      ArrowUp: () => {
-        const position = { ...player, y: player.y - 1 };
-        setPlayerPosition({ ...position });
-        if (boxes[`${position.x},${position.y}`]) {
-          const boxPosition = { ...position, y: position.y - 1 };
-          setBoxesPosition({
-            ...boxes,
-            [`${position.x},${position.y}`]: 0,
-            [`${boxPosition.x},${boxPosition.y}`]:
-              game.stage[boxPosition.y][boxPosition.x] === chars.target
-                ? 1
-                : -1,
-          });
-        }
-      },
-      ArrowLeft: () => {
-        const position = { ...player, x: player.x - 1 };
-        setPlayerPosition({ ...position });
-        if (boxes[`${position.x},${position.y}`]) {
-          const boxPosition = { ...position, x: position.x - 1 };
-          setBoxesPosition({
-            ...boxes,
-            [`${position.x},${position.y}`]: 0,
-            [`${boxPosition.x},${boxPosition.y}`]:
-              game.stage[boxPosition.y][boxPosition.x] === chars.target
-                ? 1
-                : -1,
-          });
-        }
-      },
-      ArrowDown: () => {
-        const position = { ...player, y: player.y + 1 };
-        setPlayerPosition({ ...position });
-        if (boxes[`${position.x},${position.y}`]) {
-          const boxPosition = { ...position, y: position.y + 1 };
-          setBoxesPosition({
-            ...boxes,
-            [`${position.x},${position.y}`]: 0,
-            [`${boxPosition.x},${boxPosition.y}`]:
-              game.stage[boxPosition.y][boxPosition.x] === chars.target
-                ? 1
-                : -1,
-          });
-        }
-      },
-      ArrowRight: () => {
-        const position = { ...player, x: player.x + 1 };
-        setPlayerPosition({ ...position });
-        if (boxes[`${position.x},${position.y}`]) {
-          const boxPosition = { ...position, x: position.x + 1 };
-          setBoxesPosition({
-            ...boxes,
-            [`${position.x},${position.y}`]: 0,
-            [`${boxPosition.x},${boxPosition.y}`]:
-              game.stage[boxPosition.y][boxPosition.x] === chars.target
-                ? 1
-                : -1,
-          });
-        }
-      },
-    };
-
+  useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (canMove[e.key] && canMove[e.key]())
         if (movements[e.key]) movements[e.key]();
@@ -217,14 +209,14 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
     window.addEventListener("keydown", handleKey);
 
     return () => window.removeEventListener("keydown", handleKey);
-  }, [player, boxes, game.stage]);
+  }, [player, boxes, game.stage, canMove, movements]);
 
   useEffect(() => {
     if (
       Object.values(boxes).filter((value) => value === 1).length ===
       game.targets
     ) {
-      alert("parabéns!!!");
+      alert("good job!");
       onFinish();
     }
   }, [boxes, game.targets, onFinish]);
@@ -245,6 +237,12 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
     return getBackground(char);
   };
 
+  const handleButton: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    const { arrow } = (e.target as any).dataset;
+    if (canMove[arrow] && canMove[arrow]())
+      if (movements[arrow]) movements[arrow]();
+  };
+
   return (
     <React.Fragment>
       <table className="app-stage">
@@ -263,7 +261,22 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
           ))}
         </tbody>
       </table>
-      {/* <pre>{setup}</pre> */}
+
+      <div className="app-actions">
+        <button data-arrow="ArrowLeft" onClick={handleButton}>
+          left
+        </button>
+        <button data-arrow="ArrowUp" onClick={handleButton}>
+          up
+        </button>
+        <button data-arrow="ArrowDown" onClick={handleButton}>
+          down
+        </button>
+        <button data-arrow="ArrowRight" onClick={handleButton}>
+          right
+        </button>
+      </div>
+
       <button onClick={() => setReset((_reset) => _reset + 1)}>reset</button>
     </React.Fragment>
   );
