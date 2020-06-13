@@ -19,6 +19,7 @@ describe("createGame", () => {
       player: { x: 1, y: 1 },
       boxes: { "3,1": 1, "2,2": -1 },
       targets: 2,
+      getObject: expect.any(Function),
     });
   });
 
@@ -42,6 +43,7 @@ describe("createGame", () => {
         "4,5": -1,
       },
       targets: 4,
+      getObject: expect.any(Function),
     });
   });
 });

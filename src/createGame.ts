@@ -1,4 +1,4 @@
-import { BoxesObj } from "./types";
+import { BoxesObj, Coordinates } from "./types";
 import { chars } from "./constants";
 
 export const createGame = (setup: string) => {
@@ -6,7 +6,7 @@ export const createGame = (setup: string) => {
   let column = 0;
   let targets = 0;
 
-  const player = { x: 0, y: 0 };
+  const player: Coordinates = { x: 0, y: 0 };
   const boxes: BoxesObj = {};
 
   const handleChar: { [char: string]: (x: number, y: number) => void } = {
@@ -57,5 +57,39 @@ export const createGame = (setup: string) => {
       return prev;
     }, []);
 
-  return { stage, player, boxes, targets };
+  return { stage, player, boxes, targets, getObject: createGetObject(stage) };
+};
+
+const createGetObject = (stage: string[][]) => (
+  player: Coordinates,
+  boxes: BoxesObj,
+  x: number,
+  y: number
+) => {
+  if (player.x === x && player.y === y) {
+    if (stage[player.y][player.x] === chars.target)
+      return getBackground(chars.playerOnTarget);
+
+    return getBackground(chars.player);
+  }
+
+  if (boxes[`${x},${y}`]) {
+    if (boxes[`${x},${y}`] === 1) return getBackground(chars.boxOnTarget);
+    return getBackground(chars.box);
+  }
+
+  return getBackground(stage[y][x]);
+};
+
+const getBackground = (char: string) => {
+  const bgs: { [char: string]: () => string } = {
+    $: () => "app-stage-box",
+    "*": () => "app-stage-box--target",
+    "#": () => "app-stage-wall",
+    ".": () => "app-stage-target",
+    "@": () => "app-stage-player",
+    "+": () => "app-stage-player--target",
+  };
+
+  return bgs[char] ? bgs[char]() : "";
 };

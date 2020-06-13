@@ -8,7 +8,7 @@ import React, {
 import "./App.css";
 import github from "./github.svg";
 import levels from "./db";
-import { BoxesObj } from "./types";
+import { BoxesObj, Coordinates } from "./types";
 import { createGame } from "./createGame";
 import { chars } from "./constants";
 
@@ -238,22 +238,6 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
     return () => cancelAnimationFrame(callback);
   }, [boxes, game.targets, onFinish]);
 
-  const getObj = (x: number, y: number, char: string) => {
-    if (player.x === x && player.y === y) {
-      if (game.stage[player.y][player.x] === chars.target)
-        return getBackground(chars.playerOnTarget);
-
-      return getBackground(chars.player);
-    }
-
-    if (boxes[`${x},${y}`]) {
-      if (boxes[`${x},${y}`] === 1) return getBackground(chars.boxOnTarget);
-      return getBackground(chars.box);
-    }
-
-    return getBackground(char);
-  };
-
   const handleButton: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     const arrow = (e.target as any).dataset.arrow as KEYS;
     if (canMove[arrow] && canMove[arrow]()) {
@@ -269,8 +253,8 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
             <tr key={`line-${y}`}>
               {line.map((column, x) => (
                 <td
-                  key={`line-${y}-column-${x}`}
-                  className={getObj(x, y, column)}
+                  key={`line-${y}-column-${x}-${column}`}
+                  className={game.getObject(player, boxes, x, y)}
                 >
                   &nbsp;
                 </td>
@@ -302,24 +286,8 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
   );
 };
 
-const getBackground = (char: string) => {
-  const bgs: { [char: string]: () => string } = {
-    $: () => "app-stage-box",
-    "*": () => "app-stage-box--target",
-    "#": () => "app-stage-wall",
-    ".": () => "app-stage-target",
-    "@": () => "app-stage-player",
-    "+": () => "app-stage-player--target",
-  };
-
-  return bgs[char] ? bgs[char]() : "";
-};
-
 const getNewPosition: {
-  [key in KEYS]: (position: {
-    x: number;
-    y: number;
-  }) => { x: number; y: number };
+  [key in KEYS]: (position: Coordinates) => Coordinates;
 } = {
   [KEYS.UP]: (position) => ({ ...position, y: position.y - 1 }),
   [KEYS.LEFT]: (position) => ({ ...position, x: position.x - 1 }),
