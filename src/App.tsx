@@ -265,18 +265,36 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
       </table>
 
       <div className="app-actions">
-        <button data-arrow={KEYS.LEFT} onClick={handleButton}>
-          left
-        </button>
-        <button data-arrow={KEYS.UP} onClick={handleButton}>
-          up
-        </button>
-        <button data-arrow={KEYS.DOWN} onClick={handleButton}>
-          down
-        </button>
-        <button data-arrow={KEYS.RIGHT} onClick={handleButton}>
-          right
-        </button>
+        <div className="app-controls">
+          <button
+            onClick={handleButton}
+            className="app-controls-left"
+            data-arrow={KEYS.LEFT}
+          >
+            ←
+          </button>
+          <button
+            onClick={handleButton}
+            className="app-controls-up"
+            data-arrow={KEYS.UP}
+          >
+            ↑
+          </button>
+          <button
+            onClick={handleButton}
+            className="app-controls-down"
+            data-arrow={KEYS.DOWN}
+          >
+            ↓
+          </button>
+          <button
+            onClick={handleButton}
+            className="app-controls-right"
+            data-arrow={KEYS.RIGHT}
+          >
+            →
+          </button>
+        </div>
       </div>
 
       <button onClick={() => setReset((_reset) => (_reset % 2) + 1)}>

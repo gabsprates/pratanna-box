@@ -1,9 +1,12 @@
+body {
+  background-color: #282c34;
+}
+
 .app {
   color: white;
-  height: calc(100vh - 1px);
+  min-height: calc(100vh - 1px);
   font-size: 16px;
   padding-top: 1px;
-  background-color: #282c34;
 }
 
 .app-container {
@@ -49,7 +52,7 @@
 
 .app-board {
   display: flex;
-  padding: 15px;
+  padding: 30px 15px;
   flex-grow: 1;
   align-self: stretch;
   align-items: center;
@@ -139,16 +142,46 @@
   display: block;
   margin-top: 10px;
 }
-.app-actions button {
+.app-controls {
+  height: 120px;
+  margin: 0 30px;
+  position: relative;
+}
+.app-controls-left,
+.app-controls-up,
+.app-controls-down,
+.app-controls-right {
   color: #fff;
+  width: 40px;
+  height: 40px;
   border: 0;
-  margin: 0 5px;
-  padding: 10px;
-  font-size: 1em;
+  position: absolute;
+  font-size: 1.2em;
+  line-height: 40px;
   background-color: #393d45;
 }
 .app-actions button:hover {
   background-color: #4a4e56;
+}
+.app-controls-left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.app-controls-up {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.app-controls-down {
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.app-controls-right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 550px) {
