@@ -12,6 +12,13 @@ import { BoxesObj } from "./types";
 import { createGame } from "./createGame";
 import { chars } from "./constants";
 
+enum KEYS {
+  UP = "ArrowUp",
+  LEFT = "ArrowLeft",
+  DOWN = "ArrowDown",
+  RIGHT = "ArrowRight",
+}
+
 function App() {
   const [current, setCurrent] = useState(0);
   useLayoutEffect(() => {
@@ -84,13 +91,13 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
   const [boxes, setBoxesPosition] = useState<BoxesObj>(game.boxes);
   useLayoutEffect(() => setBoxesPosition({ ...game.boxes }), [game.boxes]);
 
-  const canMove: { [key: string]: () => boolean } = {
-    ArrowUp: () => {
-      const position = { ...player, y: player.y - 1 };
+  const canMove: { [key in KEYS]: () => boolean } = {
+    [KEYS.UP]: () => {
+      const position = getNewPosition[KEYS.UP](player);
       if (game.stage[position.y][position.x] === chars.wall) return false;
       if (!boxes[`${position.x},${position.y}`]) return true;
 
-      const boxPosition = { ...position, y: position.y - 1 };
+      const boxPosition = getNewPosition[KEYS.UP](position);
       if (
         game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
         !boxes[`${boxPosition.x},${boxPosition.y}`]
@@ -100,12 +107,12 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
 
       return false;
     },
-    ArrowLeft: () => {
-      const position = { ...player, x: player.x - 1 };
+    [KEYS.LEFT]: () => {
+      const position = getNewPosition[KEYS.LEFT](player);
       if (game.stage[position.y][position.x] === chars.wall) return false;
       if (!boxes[`${position.x},${position.y}`]) return true;
 
-      const boxPosition = { ...position, x: position.x - 1 };
+      const boxPosition = getNewPosition[KEYS.LEFT](position);
       if (
         game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
         !boxes[`${boxPosition.x},${boxPosition.y}`]
@@ -115,12 +122,12 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
 
       return false;
     },
-    ArrowDown: () => {
-      const position = { ...player, y: player.y + 1 };
+    [KEYS.DOWN]: () => {
+      const position = getNewPosition[KEYS.DOWN](player);
       if (game.stage[position.y][position.x] === chars.wall) return false;
       if (!boxes[`${position.x},${position.y}`]) return true;
 
-      const boxPosition = { ...position, y: position.y + 1 };
+      const boxPosition = getNewPosition[KEYS.DOWN](position);
       if (
         game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
         !boxes[`${boxPosition.x},${boxPosition.y}`]
@@ -130,12 +137,12 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
 
       return false;
     },
-    ArrowRight: () => {
-      const position = { ...player, x: player.x + 1 };
+    [KEYS.RIGHT]: () => {
+      const position = getNewPosition[KEYS.RIGHT](player);
       if (game.stage[position.y][position.x] === chars.wall) return false;
       if (!boxes[`${position.x},${position.y}`]) return true;
 
-      const boxPosition = { ...position, x: position.x + 1 };
+      const boxPosition = getNewPosition[KEYS.RIGHT](position);
       if (
         game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
         !boxes[`${boxPosition.x},${boxPosition.y}`]
@@ -147,12 +154,12 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
     },
   };
 
-  const movements: { [key: string]: () => void } = {
-    ArrowUp: () => {
-      const position = { ...player, y: player.y - 1 };
+  const movements: { [key in KEYS]: () => void } = {
+    [KEYS.UP]: () => {
+      const position = getNewPosition[KEYS.UP](player);
       setPlayerPosition({ ...position });
       if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = { ...position, y: position.y - 1 };
+        const boxPosition = getNewPosition[KEYS.UP](position);
         setBoxesPosition({
           ...boxes,
           [`${position.x},${position.y}`]: 0,
@@ -161,11 +168,11 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
         });
       }
     },
-    ArrowLeft: () => {
-      const position = { ...player, x: player.x - 1 };
+    [KEYS.LEFT]: () => {
+      const position = getNewPosition[KEYS.LEFT](player);
       setPlayerPosition({ ...position });
       if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = { ...position, x: position.x - 1 };
+        const boxPosition = getNewPosition[KEYS.LEFT](position);
         setBoxesPosition({
           ...boxes,
           [`${position.x},${position.y}`]: 0,
@@ -174,11 +181,11 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
         });
       }
     },
-    ArrowDown: () => {
-      const position = { ...player, y: player.y + 1 };
+    [KEYS.DOWN]: () => {
+      const position = getNewPosition[KEYS.DOWN](player);
       setPlayerPosition({ ...position });
       if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = { ...position, y: position.y + 1 };
+        const boxPosition = getNewPosition[KEYS.DOWN](position);
         setBoxesPosition({
           ...boxes,
           [`${position.x},${position.y}`]: 0,
@@ -187,11 +194,11 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
         });
       }
     },
-    ArrowRight: () => {
-      const position = { ...player, x: player.x + 1 };
+    [KEYS.RIGHT]: () => {
+      const position = getNewPosition[KEYS.RIGHT](player);
       setPlayerPosition({ ...position });
       if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = { ...position, x: position.x + 1 };
+        const boxPosition = getNewPosition[KEYS.RIGHT](position);
         setBoxesPosition({
           ...boxes,
           [`${position.x},${position.y}`]: 0,
@@ -204,8 +211,10 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (canMove[e.key] && canMove[e.key]())
-        if (movements[e.key]) movements[e.key]();
+      const key = e.key as KEYS;
+      if (canMove[key] && canMove[key]()) {
+        if (movements[key]) movements[key]();
+      }
     };
 
     window.addEventListener("keydown", handleKey);
@@ -246,9 +255,10 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
   };
 
   const handleButton: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    const { arrow } = (e.target as any).dataset;
-    if (canMove[arrow] && canMove[arrow]())
+    const arrow = (e.target as any).dataset.arrow as KEYS;
+    if (canMove[arrow] && canMove[arrow]()) {
       if (movements[arrow]) movements[arrow]();
+    }
   };
 
   return (
@@ -271,16 +281,16 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
       </table>
 
       <div className="app-actions">
-        <button data-arrow="ArrowLeft" onClick={handleButton}>
+        <button data-arrow={KEYS.LEFT} onClick={handleButton}>
           left
         </button>
-        <button data-arrow="ArrowUp" onClick={handleButton}>
+        <button data-arrow={KEYS.UP} onClick={handleButton}>
           up
         </button>
-        <button data-arrow="ArrowDown" onClick={handleButton}>
+        <button data-arrow={KEYS.DOWN} onClick={handleButton}>
           down
         </button>
-        <button data-arrow="ArrowRight" onClick={handleButton}>
+        <button data-arrow={KEYS.RIGHT} onClick={handleButton}>
           right
         </button>
       </div>
@@ -303,6 +313,18 @@ const getBackground = (char: string) => {
   };
 
   return bgs[char] ? bgs[char]() : "";
+};
+
+const getNewPosition: {
+  [key in KEYS]: (position: {
+    x: number;
+    y: number;
+  }) => { x: number; y: number };
+} = {
+  [KEYS.UP]: (position) => ({ ...position, y: position.y - 1 }),
+  [KEYS.LEFT]: (position) => ({ ...position, x: position.x - 1 }),
+  [KEYS.DOWN]: (position) => ({ ...position, y: position.y + 1 }),
+  [KEYS.RIGHT]: (position) => ({ ...position, x: position.x + 1 }),
 };
 
 export default App;
