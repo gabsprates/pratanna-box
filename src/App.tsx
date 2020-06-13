@@ -282,7 +282,9 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
         </button>
       </div>
 
-      <button onClick={() => setReset((_reset) => _reset + 1)}>reset</button>
+      <button onClick={() => setReset((_reset) => (_reset % 2) + 1)}>
+        reset
+      </button>
     </React.Fragment>
   );
 };
