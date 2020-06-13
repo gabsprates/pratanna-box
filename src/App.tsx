@@ -212,13 +212,19 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
   }, [player, boxes, game.stage, canMove, movements]);
 
   useEffect(() => {
-    if (
-      Object.values(boxes).filter((value) => value === 1).length ===
-      game.targets
-    ) {
-      alert("good job!");
-      onFinish();
-    }
+    const callback = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (
+          Object.values(boxes).filter((value) => value === 1).length ===
+          game.targets
+        ) {
+          alert("good job!");
+          onFinish();
+        }
+      });
+    });
+
+    return () => cancelAnimationFrame(callback);
   }, [boxes, game.targets, onFinish]);
 
   const getObj = (x: number, y: number, char: string) => {
