@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import "./App.css";
 import github from "./github.svg";
-import db from "./db";
+import levels from "./db";
 
 function App() {
   const [current, setCurrent] = useState(0);
@@ -15,7 +15,6 @@ function App() {
     const initialLevel = +(localStorage.getItem("level") || 0);
     setCurrent(initialLevel);
   }, []);
-  const levels = db.split("---");
 
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
     setCurrent(+e.target.value);
