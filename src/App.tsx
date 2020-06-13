@@ -8,6 +8,9 @@ import React, {
 import "./App.css";
 import github from "./github.svg";
 import levels from "./db";
+import { BoxesObj } from "./types";
+import { createGame } from "./createGame";
+import { chars } from "./constants";
 
 function App() {
   const [current, setCurrent] = useState(0);
@@ -289,16 +292,6 @@ const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
   );
 };
 
-const chars = {
-  target: ".",
-  wall: "#",
-  empty: " ",
-  box: "$",
-  boxOnTarget: "*",
-  player: "@",
-  playerOnTarget: "+",
-};
-
 const getBackground = (char: string) => {
   const bgs: { [char: string]: () => string } = {
     $: () => "app-stage-box",
@@ -310,70 +303,6 @@ const getBackground = (char: string) => {
   };
 
   return bgs[char] ? bgs[char]() : "";
-};
-
-type BoxesObj = { [axis: string]: number };
-
-const createGame = (setup: string) => {
-  let line = 0;
-  let column = 0;
-  let columns = 0;
-  let targets = 0;
-
-  const player = { x: 0, y: 0 };
-  const boxes: BoxesObj = {};
-
-  const handleChar: { [char: string]: (x: number, y: number) => void } = {
-    [chars.player]: (x, y) => {
-      player.x = x;
-      player.y = y;
-    },
-    [chars.playerOnTarget]: (x, y) => {
-      player.x = x;
-      player.y = y;
-    },
-    [chars.box]: (x, y) => {
-      boxes[`${x},${y}`] = -1;
-    },
-    [chars.boxOnTarget]: (x, y) => {
-      boxes[`${x},${y}`] = 1;
-    },
-  };
-
-  const stage = setup
-    .replace(/^\n/, "")
-    .replace(/\n$/, "")
-    .split("")
-    .reduce<string[][]>((prev, current) => {
-      if (column > columns) columns = column;
-
-      if (!prev[line]) prev[line] = [];
-
-      if (current === "\n") {
-        line++;
-        column = 0;
-        return prev;
-      }
-
-      if (handleChar[current]) {
-        handleChar[current](column, line);
-        if (current === chars.boxOnTarget) {
-          targets++;
-          prev[line][column] = chars.target;
-        } else {
-          prev[line][column] = " ";
-        }
-      } else {
-        if (current === chars.target) targets++;
-        prev[line][column] = current;
-      }
-
-      column++;
-
-      return prev;
-    }, []);
-
-  return { stage, lines: line, columns, player, boxes, targets };
 };
 
 export default App;
