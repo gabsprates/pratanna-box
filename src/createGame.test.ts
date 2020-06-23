@@ -24,7 +24,7 @@ describe("createGame", () => {
   });
 
   it(`must to return game setup for: ${levels[0]}`, () => {
-    expect(createGame(levels[0])).toEqual({
+    expect(createGame(levels[0].stage)).toEqual({
       stage: [
         [" ", " ", "#", "#", "#"],
         [" ", " ", "#", ".", "#"],

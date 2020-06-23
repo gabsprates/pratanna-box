@@ -23,7 +23,7 @@ function App() {
   const [current, setCurrent] = useState(0);
   useLayoutEffect(() => {
     const initialLevel = +(localStorage.getItem("level") || 0);
-    setCurrent(initialLevel);
+    setCurrent(initialLevel > 99 ? 99 : initialLevel);
   }, []);
 
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
@@ -33,8 +33,10 @@ function App() {
   const onFinish = useCallback(
     () =>
       setCurrent((_current) => {
-        localStorage.setItem("level", `${_current + 1}`);
-        return _current + 1;
+        let newLevel = _current + 1;
+        if (newLevel > 99) newLevel = 99;
+        localStorage.setItem("level", String(newLevel));
+        return newLevel;
       }),
     []
   );
@@ -65,7 +67,7 @@ function App() {
               className="app-select"
             >
               {levels.map((level, index) => (
-                <option key={level} value={index}>
+                <option key={level.stage} value={index}>
                   {index + 1}
                 </option>
               ))}
@@ -80,10 +82,17 @@ function App() {
   );
 }
 
-const Game = ({ setup, onFinish }: { setup: string; onFinish: () => void }) => {
+const Game = ({
+  setup,
+  onFinish,
+}: {
+  setup: { stage: string; solution: string };
+  onFinish: () => void;
+}) => {
   const [reset, setReset] = useState(0);
+  console.log(setup);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const game = useMemo(() => createGame(setup), [setup, reset]);
+  const game = useMemo(() => createGame(setup.stage), [setup, reset]);
 
   const [player, setPlayerPosition] = useState(game.player);
   useLayoutEffect(() => setPlayerPosition({ ...game.player }), [game.player]);

@@ -1,5 +1,6 @@
 const levels = [
-  `
+  {
+    stage: `
   ###
   #.#
   # ####
@@ -9,7 +10,10 @@ const levels = [
    #.#
    ###
 `,
-  `
+    solution: "DuLLrUUdrR",
+  },
+  {
+    stage: `
 #####
 #@  #
 # $$# ###
@@ -20,7 +24,11 @@ const levels = [
  #   ####
  #####
 `,
-  `
+    solution:
+      "rrDDDDrddlluRdrUluuuuulldRurDDDDRRRdrUUdlllddlluRdrUluuuulldRurDDDRRRdrUlllddlluRdrUluRRR",
+  },
+  {
+    stage: ` 
  #######
  #     ###
 ##$###   #
@@ -29,7 +37,11 @@ const levels = [
 ##..#   #
  ########
 `,
-  `
+    solution:
+      "rRRddrruULuullllDDDuuurrrrddLLLrrruulllldDrrrrrruLdlllllldRuuurrrrDrdLLLLDurrruulllldDldRurrrddrUruLLLLrrruulllldD",
+  },
+  {
+    stage: ` 
  ####
 ##  #
 #@$ #
@@ -39,7 +51,10 @@ const levels = [
 #..*.#
 ######
 `,
-  `
+    solution: "RDrDrddLLrruulDLdRuuulDDuuuurDDDD",
+  },
+  {
+    stage: ` 
  #####
  #@ ###
  # $  #
@@ -49,7 +64,10 @@ const levels = [
 #.   $ #
 ########
 `,
-  `
+    solution: "rDrrddrddLLulLdlUrrrdrruuluullDDuurrddrddllLLrruLL",
+  },
+  {
+    stage: ` 
    #######
 ####     #
 #   .### #
@@ -62,7 +80,11 @@ const levels = [
  #     ##   #
  ############
 `,
-  `
+    solution:
+      "llllldlllluurrruRuUluRRldddldllluluuuurrrurrrrdDllldLdlUUdrrrdrDDulldlllddrrrruRldlllluuuluuuurRdddrDrdLLrrurrddldlllluUddrrrrurRRdrruLLLL",
+  },
+  {
+    stage: ` 
    #######
   ##  # @#
   #   #  #
@@ -72,7 +94,11 @@ const levels = [
 #.....  #
 #########
 `,
-  `
+    solution:
+      "dddlUlLullDDDuuurrdrrdddlluLdLLrrrrruuullullddDrdLuuuurrdLDDldRuuurrrruulDrdLLLulDDDuuulDDD",
+  },
+  {
+    stage: ` 
    ######
  ###    #
 ##. $## ##
@@ -81,7 +107,10 @@ const levels = [
 ######  #
      ####
 `,
-  `
+    solution: "llLdLLUdrruLLrrrruulllDLdLrdLrrruLLrrrrdLLLL",
+  },
+  {
+    stage: ` 
  #########
  #  ##   #
  #   $   #
@@ -92,7 +121,11 @@ const levels = [
 #     # @ #
 ###########
 `,
-  `
+    solution:
+      "lulullddrUluRdrrdrruLLLUlldldlluRuuUrurRRurrdDDDuuuulldRlllldldddRdrUdrUlURdrrdrruLLLrruuuluurDDDDuululllldlddddrrrUUdrrdrruLLLrruuululllldlddddrrrUllluuuruulDDDDuururrrrdrdddllllldlluRRdrU",
+  },
+  {
+    stage: ` 
   ######
   #    #
 ###$$$ #
@@ -101,7 +134,10 @@ const levels = [
 ####  #
    ####
 `,
-  `
+    solution: "dRRRurruullDDLdlluRRRuurrdLulDulDD",
+  },
+  {
+    stage: ` 
  ####  #####
 ##  #  #   #
 # $ ####$  #
@@ -109,7 +145,10 @@ const levels = [
 ##    # @ ##
  ##########
 `,
-  `
+    solution: "lullldlluRRRlluulDldRRdrruRRdrrULLLrrrruulDrdLLLrruulDrdL",
+  },
+  {
+    stage: ` 
   #####
 ###  @#
 #  $. ##
@@ -118,7 +157,10 @@ const levels = [
   #   ##
   #####
 `,
-  `
+    solution: "ldLdlluRRurrddLLddrrUdlluuulldR",
+  },
+  {
+    stage: ` 
   ####
   #..#
  ## .##
@@ -128,7 +170,10 @@ const levels = [
 #  @   #
 ########
 `,
-  `
+    solution: "luuRRUUldldddrrUUddrruLdllluurrUrDlllddrrUUruLdddrUUllUU",
+  },
+  {
+    stage: ` 
 ########
 #  #   #
 # $..$ #
@@ -137,7 +182,10 @@ const levels = [
 #  #   #
 ########
 `,
-  `
+    solution: "dRluuRDrRuLrurrdLLdddrruLUluurrdLdlllluurDldRRllddrUluR",
+  },
+  {
+    stage: ` 
  ######
 ##    ##
 # $ $$ #
@@ -146,7 +194,11 @@ const levels = [
 ### @###
   ####
 `,
-  `
+    solution:
+      "uuluurrDLdddlUruuullDRllddRRdrUlULuurDurrdLrrddLLULrddlUruRuulDulldRRurD",
+  },
+  {
+    stage: ` 
   ######
   #    ###
   # $    #
@@ -157,7 +209,11 @@ const levels = [
    #  @  #
    #######
 `,
-  `
+    solution:
+      "lluUluuRlddrUluuurrdLulDDDuurrrrrddllLLLLrrdLLrrddrruUruLLLLuurrDLulDDrdLrddrrrUUluLLulDrruurrrddLLLL",
+  },
+  {
+    stage: ` 
 ######
 #    #
 # $$$##
@@ -166,7 +222,11 @@ const levels = [
  # @    #
  ########
 `,
-  `
+    solution:
+      "luuluurrrDDrdLuuullDRurDDrddrruLdlUdlUdlluRRllUluRurrdDuulldRurD",
+  },
+  {
+    stage: ` 
   ########
   #   #. #
  ##  $...#
@@ -177,7 +237,11 @@ const levels = [
 #######@ #
       ####
 `,
-  `
+    solution:
+      "ruuLuUruulDlLulldRRRRurDlDDDrddlUlluUUdddrrUUUUlLulldRldRuRRRddddlluRdrUUUddlluUluRlldlddrRRRdrUU",
+  },
+  {
+    stage: ` 
  #######
  #.... #
 ###...$###
@@ -187,7 +251,11 @@ const levels = [
 #### @ ###
    #####
 `,
-  `
+    solution:
+      "luurUdlddrrurruuLLrrddlldllullUdrruLUUrurrDLulLdddrrUUruLdddlddrrurruulLrrddlldllullluRdrUUUddlluRdrUdrrUUdrrrddlUruLLrddldlluurU",
+  },
+  {
+    stage: ` 
 #######
 #..$..#
 #..#..#
@@ -197,7 +265,10 @@ const levels = [
 #  #@ #
 #######
 `,
-  `
+    solution: "ruulUruulLLdlddrUUlddddrUUURRUddrUUddddlUUUddLUdLdlUUUrRRdrU",
+  },
+  {
+    stage: ` 
    ######
    # ...#
 ####....#
@@ -207,7 +278,11 @@ const levels = [
 #   ###   #
 ##### #####
 `,
-  `
+    solution:
+      "uurDrRdRRuUruLLrdddlluRdrUUUruLdddlllllddrUluRRRRdrUUddRUUULddllllddrUluRRRdrUUUdddrdrruuLLrrdLdlUUUddlUU",
+  },
+  {
+    stage: ` 
 ########
 #      #
 # #$$  #
@@ -218,7 +293,10 @@ const levels = [
  #  #  @#
  ########
 `,
-  `
+    solution: "luUULLullluurrDurDrrDDDrddllUlldlUUUddrrrUruLdrrdLLLLdlUU",
+  },
+  {
+    stage: ` 
   #####
 ###   ####
 #   $ $  #
@@ -228,7 +306,11 @@ const levels = [
   #....#
   ######
 `,
-  `
+    solution:
+      "lLLuullddRDDldRRluuuluurDDDDldRuuuurRdLulDDDuurrrruLLLulDDDululldRRDDRRlluuurDDldR",
+  },
+  {
+    stage: ` 
 ######   #####
 #    ### #  .#
 #  $ $ # #...#
@@ -239,7 +321,11 @@ const levels = [
   ##     #  .#
    ###########
 `,
-  `
+    solution:
+      "lLLDlluRRRRRllllluLLDRRRRRRdrrUUUdlDllllllluuullldddrRRRRRRRRRDrUUdlllllllllddrUluRRRRRRRRlllllllllluurRDullddrRRRRRRRRdrUUrDDDLuulllllllluuurDDldRRRRRRRRllllluuLdlluurDDldRRRRRRRurrDDuLdlUlllllldddrrrUUluRRRRRlllldddrUUluRRRUrDllllllldRRRddllUUluRRRRRRdRUllllddrUluRRRuRDD",
+  },
+  {
+    stage: ` 
      ######
  #####.   #
  #  #..## #
@@ -251,7 +337,11 @@ const levels = [
 #@  #######
 #####
 `,
-  `
+    solution:
+      "rrUUrrrUUUUddddlllUUluurDRRdrddllluUluRRldddrrruuUrrddrddlULLuulUlldddrRdrUllluuurrrrrdDrdLLLUUlulldddddlluuRlddrruUUUluRRldddrRdrUU",
+  },
+  {
+    stage: ` 
  #########
  #   ##  ####
  # $        #
@@ -265,7 +355,11 @@ const levels = [
     #   #
     #####
 `,
-  `
+    solution:
+      "LLLddllUUddrruuLUUrurrruuullldDrddllddrrrrUUUllulDrrrUUruLLLulDDDlDRRluuurrrddddddlllluLLLdlluRuuRRRRRuuurrrddddddlllluUddrrrruuuuuullldddLLrddllLdlluRRRRDrUUddrrrruuuuuullllllulldRRRRRdddLddlllluuurUdldddrrrdrrddllUUrrrrruuuuuulLulDDDuulllulldRRRRlllddldddrrRdrUUddrrrruuuuuullulDD",
+  },
+  {
+    stage: ` 
       #########
       #       #
       # # # # #
@@ -279,7 +373,11 @@ const levels = [
 #  ### @ ###
 #### #####
 `,
-  `
+    solution:
+      "rUUUUUUrUdlluRRlddddddrruLdlUUUUUluuurrrrrrdddllLdLrurrruuulllllldddrDDDDrdLLLLLLruuulllddddrUUUUdddrrrrrruuuurruLrrrruuullllDDDuuullddRDDDDDrdLLLLLLruuulllddddrUUdrrrrrruuuuurrdLulDuluuurrdDuurrdDLddllDDDrdLLLLLLruuulllddrUldddrUUdrrrrrruuuurrdLulDDDrdLLLLLLLdlUUUURRlldddrrrrrrruuurruuLruruurrdddddlLLLulDDDrdLLLLLLruuruulDlllddddrUrrrrrruuurruuuruulldDlDDDDDrdLLLLLLLdlUUUddrrrrrrruuurruuLulDDDDDrdLLLLLLLdlUUdrrrrrrruuurrrrruulLLLrrDurrddlLLLulDDDrdLLLLLLLdlUrrrrrrruuuruuulDDDDDrdLLLLLLLrrrruRdrUUUruulDDDDrdLLLLLLruUruLL",
+  },
+  {
+    stage: ` 
     ####
 #####  #
 #  $ $ # #######
@@ -294,7 +392,11 @@ const levels = [
 #####  #
     ####
 `,
-  `
+    solution:
+      "UrRdRRRRdrUrUrUrRlldldDrDrRuUUUddlUdDlUUdllluRRRRdrUdllllllllluuRDldRRRRRRRRurDDDuulllllllulllldRRRRRRRRRRurDDulllllllluuurDDldRRRRRurDDullllluuuuulDDDDldRRRRRRRRdrUllllllluuuullDDDldRRRRRRRRRlllllluuulllDDldRRRRRRRRRurDldRulllllluuulllluRRRurDDDDldRRRRRRdrUllllllullllUruulldRRRRurDDDldRRRRRurDldRullllldddlUlUluRRRRRRRRlllllddlUluRRRRRRdrUllllldddddlUUUUluRRRRRurDldRullllddddllUUUluRRRRRRRlllldddlllldRRRdrUUUUluRRRRdrUllllllllDDRddlluRRRRdrUUUluRRRurDldRullldddllUUluRRRRRR",
+  },
+  {
+    stage: ` 
 ########
 #......#
 #  $ # ##
@@ -303,7 +405,11 @@ const levels = [
  #  @   #
  ########
 `,
-  `
+    solution:
+      "luuUruLLdrdddrruLdrrruLLdllUUUlldRurrurrdDlddlluUluuRRllddrUluRddddrrrUUUdldLdlUUUdddlUUU",
+  },
+  {
+    stage: ` 
   ##########
 ###   .    #
 #   ##$##  #
@@ -312,7 +418,11 @@ const levels = [
  #    .   #
  ##########
 `,
-  `
+    solution:
+      "ddrrrrrrruUlllllLuurrrDulllddrrRRllllulldRddrrrrrrruuUruLLLrrddddlllUdlllluuRDldRRR",
+  },
+  {
+    stage: ` 
    ######
 ####.  @#
 #  $$$  #
@@ -322,7 +432,11 @@ const levels = [
 ####   #
    #####
 `,
-  `
+    solution:
+      "dddlddlluLuRddrruuruulullDDDllluurRlldddRurruURurrdddlLLuurRurDlllddrrddllUULLdRllU",
+  },
+  {
+    stage: ` 
  ######
  #. ..#
  #. $.#
@@ -332,7 +446,10 @@ const levels = [
 #   @  #
 ########
 `,
-  `
+    solution: "lUUUUluRRDlddddlluuRlddrruUUUruLdddddrrruuLUdLUdrrddllluUUrUL",
+  },
+  {
+    stage: ` 
     ######
   ###    ###
   #   #$   ###
@@ -346,7 +463,11 @@ const levels = [
 #....   #
 #########
 `,
-  `
+    solution:
+      "drrrUUUllUluurrdDuuurrrddlLDDDDrDLLLdlUrrruuuulldRurDDDrdLLLuLLrDrrruuuuurrrddlLrruullldDDDrrUdldLLLdLUruLddLdlUrrurrruuuuurrrddLLrruuluulDulldDDrDDDrdLLLulDDrdLLrrrrrUUllDurrddlLLLuurrruuurrddLruulldDrdLLLulDDurrruuurrrurrrdLLLLLrruulLLdDDDrdLLdlluurDDurruuuuurrDrdLLruulldDDDrdLLLulDrdLLrurrruuuuururrrDDrdLLLLruulldDDDrdLLLulDrdLurrruuurrrrrruuLLLulDDrdLLruulldDDDrdLLdlluurDrruuuullluurDldRRluurDrDDDDrdLLLulDrrruuuuulldRurDDDDrdLLLrruuuulldRurDDDrdLL",
+  },
+  {
+    stage: ` 
 ###############
 #      #      #
 # $ #$ # $##$ #
@@ -361,7 +482,11 @@ const levels = [
 #             #
 ###############
 `,
-  `
+    solution:
+      "dllldddrruRRRRllluurDluuuluuuuurrrddDDDlDDlddRdrrrrrrrruuuuuuuulllllDurrrrrddddddddllluuulluuruLLrddlLullluuuuurrrdddDDurruuuurDurrrrddlllLulDDurrrrrddddddddllluuulluuruLLruuuurrrrDrdLLLLulDDurrrrrddddddddllluuulluuruLdddrrddlUddlluRdllluRRllluurDldRRlluuuurDDDldRdrrrrrrrruuuLLrruuuuulllllddddlLulDDDulllluuRDldRRluuRRluuuuurrrdddDDulDDRullluuurRlluurrDrDDDDllllluuuuRurDDrRurDDulllDDullddrRRdDllldddrrrrrrrrrrrruuuuuulUruLLLLulDDDDuuurrrrddldLdDuuruUruLLLulDD",
+  },
+  {
+    stage: ` 
 #########
 #   ##  #
 # # $ $ #
@@ -373,7 +498,11 @@ const levels = [
 ######   #
      #####
 `,
-  `
+    solution:
+      "luLuullddRdDuuluurrdRddrruruulDLLddrrUruLddDDrrddllUUllldlluRuuuRlluurrDullddrdddRRRRddrruuLLUUUruulDLLDurrDDDDrrddllUUUdLLLdlluRRRRRddrruuLrddlluUlllluuuRlluurrD",
+  },
+  {
+    stage: ` 
 ########
 #      #
 # $$   ###
@@ -387,7 +516,11 @@ const levels = [
 ###########  #
           ####
 `,
-  `
+    solution:
+      "dRldRuRurDuullUluurDrDulldRdRluurDDDrruuLDrrrrrDrdLLLLLdddrrRdrUUUddlllluuuuurrrrdrdLLLLrrruullllllluurDuulllllddrddddddrrrrRRuuUdddRRRdrUUUddlllllllllluuuuuuRRRdRluurDrrdrrrrdrdLLLdLruLrrruullllullDRluuullllDRRRurDDullllldRRRRdRluurD",
+  },
+  {
+    stage: ` 
    #####
    # @ #
    #$$$#
@@ -397,7 +530,11 @@ const levels = [
 #  #.#.##
 ########
 `,
-  `
+    solution:
+      "lDDrrDDlLrruulluurrDDDullDDrRllulllddrUluRRldRRUUrrddLLLrrruuuullDDDldRlulldRurrurruLulDD",
+  },
+  {
+    stage: ` 
 ############
 #... #     #
 #..  # ##  #
@@ -411,7 +548,11 @@ const levels = [
   #        #
   ##########
 `,
-  `
+    solution:
+      "rddrrrrruulURlluUrRDLddrdrruuuuuuuullllddrDDlUruLLLLLrrrruurrrrddddddddllululUUUruLLLulDrrrddrrdLdlUUUruLLLLDrdLLulUUrDDurrrruurrrrddddLLLdlUUruLLLLrrrddrrrrdLLLddrUllUUUruLLLdllUUrDrrrddrrrdLLdlUUUruLLLdLLrUrrrddrrrrddLLdddllllluuurRlldddrruUddrrruulUdLUUUUruLLLuLLrDrrrddrrdddddllllluuurRlldddrruUrUUUUruLLLLLrrrrdddddlddlluuurRdrUUUUruLLLdLUUdrrrddrrdLdlUUUruLLLdlUrrrddddlllddRUluRRdrUUUUruLLLuLDrrrddddlldddrUUluRdrUUUUruLLLLD",
+  },
+  {
+    stage: ` 
 #########
 #       #
 #  $ $ $#
@@ -423,7 +564,11 @@ const levels = [
   #      @#
   #########
 `,
-  `
+    solution:
+      "llluUddrruuulLLullluuurrdRurrDDDldddLdllUUUdddrruLdlUUddrrrrruLdlUUUddrruuLuuuulldRurDDDuuullllldRRDuRRurDD",
+  },
+  {
+    stage: ` 
 #####      ####
 #@  ########  #
 ## $       $  #
@@ -439,7 +584,11 @@ const levels = [
     #....####
     ######
 `,
-  `
+    solution:
+      "rdddrRuurrdddDuuuullddRlldDrrruUddllllddrUluRuulDDuurruuLulDDDrrrrddldRRRurrrruUUruulDLLLLLLLLddrrdddrrurrrruuUruLddddlluRdllluRRddLDDrrddlUruLdLLdlluurDrrUUUruulDDDDrdLLLLulDDrRurruuuurrrUUUruulDLLLLLddllllddRRdrrRurDDDrdLLDlluurDDurruuullllulluurrrdDldRRRurDDDrdLLdlluurDrruuulllulllddlluRdrUluRRRlluurrrdDldRRRurDDDrdLLLulDDRurruuullluuullllDDrddlluRdrUluRRRlluurrrdDldRRRurDDDrdLLLLrrruuullluuulluuLulDDDDDrddlluRdrUluRRRlluurrrdDldRRRurDDDrdLLLullDRurDrruuullluuuruuLDDDDuuuuLLLulDDDDDrddlluRdrUluRRRdRRRurDDDrdLLLulDrrruuuurrruuUruLLLLLLLdddDuuuuLLLulDDDDDrddlluRdrUluRRRdRRRurDDDrdLLLLrrruuuuurRdrUUUruLLLLLLLdddDuuuuLLLulDDDDDrddlluRdrUluRRRdRRRurDDDrdLLLrruuullllulluurrrdDldRRRurDDDrdLL",
+  },
+  {
+    stage: ` 
      #####
  #####   #
  # .. $# #
@@ -449,7 +598,11 @@ const levels = [
 #   ## @#
 #########
 `,
-  `
+    solution:
+      "uuulDruruullDllllddRddlluRdrUluuurrrrurrddldlUdrddlULLUUddrrruulLuLrdrrddllluUddLdlluRuRlddrUrrrUruLLrrruullDurrddlL",
+  },
+  {
+    stage: ` 
 ##### #######
 #   ###  #  #
 # $     $ @ #
@@ -460,7 +613,11 @@ const levels = [
   #  ########
   ####
 `,
-  `
+    solution:
+      "drdddlluulLrrddrruuululLulDllllulldRddrrrddllUluuuRRRRRDDrrddlLLLuuRlddrrrrrruuLLruulLulDlllllddRRRddLdlUUluRRlluurrD",
+  },
+  {
+    stage: ` 
          ###
     ######@##
     #....#$ ##
@@ -475,7 +632,11 @@ const levels = [
    #  ######
    ####
 `,
-  `
+    solution:
+      "DrDDLLLdllddrddLUUUUURdrUUlLdddddddllURdrUUUUUUlURRldddddrrrdLLrdLLUUUUUluRdddddrrrrdLuuurDluLLdlUUUrUUdLrrrrrrdddrdLLLLLLdlUUUUlURdrUrrrdRurDDDrdLLLLddrUluLLdlUUUUluRRRRRdrrdddlLLLLdlUUUddrrrrrruuullullllldRRlddddllluuRRllddrrruUUddrrrrrruuullullllldRddddllURdrUUUUdddrrrrrruuullulllLddddllluRRdrUUUUUddddllddddrUUUluRdrUUUUddddllllluRRRRdrUUUddrrrdddLLLullddrUUUluRdrUUddrrrrrruuuuLLLLrrruulDrdLL",
+  },
+  {
+    stage: ` 
    #####
  ###   ###
 ##  @$ $ #
@@ -487,7 +648,11 @@ const levels = [
   #   #
   #####
 `,
-  `
+    solution:
+      "lldldddRRlluuRuurrurrdLddRRddllddllUUlluuruurRurDllldldddrrddrruuLrrruullDurrddlLrrurruLuuLLulldRDDDurRdrruLuulLulDDDuurrrddLL",
+  },
+  {
+    stage: ` 
       ####
       #  ######
       #    #  #
@@ -502,7 +667,11 @@ const levels = [
 #    ######
 ######
 `,
-  `
+    solution:
+      "URRRRuUddddrrruuuuLLuLLrDrrrrrrUUruulDDDuullullldDDrdLrrrrdrruLuuulldlULulDDurrrrrdddLLLLuLuurrruLLulDDDurrrrrdddlllddddllluullllldddrrrUUUUddddllUUluRRRRlllddRdrUUUllluurDldRRRddlUluR",
+  },
+  {
+    stage: ` 
 ####
 #  ###
 # $  ###
@@ -518,7 +687,11 @@ const levels = [
  ####.........#
     ###########
 `,
-  `
+    solution:
+      "uuuuuuRlddRUldddRUrRllluurrRDrDRRRdDldRDLdRRDullDRdRRRRllllLLruulDlllluuuUluurrRRRRurDDDDDDrDLdRRRlluullDllllluuuuUluRRRRRRurDDDDDuRDDRRDRlulDulLLdllllluuuurUluRRRRRurDDDDDDDRRRllllllllluuuurrUluRRRdLruRurDDDDDuuurruLdDDDDLdRRlllllllluuuurrUrurrurDDDDDlDRdLLrruuuuuulldllluRRRRurDDDDDDuuuuulllluullDldRRRRRRurDDDDDrDDLLuRuuuuulllluulDldRRRRRurDDDDDDuuuuullllllluuuurDDDldRRRRRRurDDDDDrDLuuuuulllluuuLdlluurDDDldRRRRRRurDDDDDlDRuuuuuulLuLDldRRRurDDDDDuuuullllluuurDDldRRRRurDDDDrRDDuRlluuurDDDuurDDllLulD",
+  },
+  {
+    stage: ` 
 #######
 # @#  #####
 # $$  $   #
@@ -529,8 +702,13 @@ const levels = [
 #  $  $   #
 #  #   #  #
 ###########
+
 `,
-  `
+    solution:
+      "lddrDDrrurrrrruullLLulDrrrDurrddlLrDDrddlUlLdlUUUlllDlddrURRRuulllDldRuuuuluurDRRDDuuRRRddrdDrddlUlLdlluRuuLuuurrrddrruuLLLLulDDDuullDDDDlddrURRdrUUdlllUUUUluurDrrrrrddrdDrddlUlLdlUllluuuUluurDrrrrrddrdDrdLLLdllulluuuUluRRldddddrrdrruLLLrrrrruuuluullulDDullddddlddrUUUUUluRRldddddrrrrrruuuluullulD",
+  },
+  {
+    stage: ` 
    #####
    # @ #
    # $ #
@@ -541,7 +719,10 @@ const levels = [
 #    .    #
 ###########
 `,
-  `
+    solution: "ldDrDrDDLUddllluurRRRuUlDuluurDurDDDlDlllddrUdrrUrUdRdrruLLdL",
+  },
+  {
+    stage: ` 
 #############
 #  $ $ $.*..#
 # $ $ $ *...#
@@ -554,8 +735,13 @@ const levels = [
 #  $ $ $.*..#
 #@$ $ $ *...#
 #############
+
 `,
-  `
+    solution:
+      "uuuuuuuuurDrDrDrRuRuRRRlluRRdllldlddRdRRRlllululluRuRRRRllluRRRdlllldlluRRRRRlllluRRRRdlllllluRRRRRddDRRRllURRlllulldRRRRllulllllldRRRRRRRlllllllddrUluRRRRRRllllldRRRRRRRlDRRlullldRRRlldRRldRRdddlUlURRlllURRuuulllllllldddrUrRdRRRRllldRRRRllldRRRRllldRRRlluuullllulldRRRRRlllldRRRRRlllldRRRRRlllldRRRRlluuulllllldRRRRRRllllldRRRRRRllllldRRRRRlllluuuuURRRRllDRRllDlluRRRlllllURRRRRlllluRRRRRlulllllldRRRRRRdddlDldRRlllllldRRRRRR",
+  },
+  {
+    stage: ` 
              #
             ##
            ###
@@ -570,8 +756,13 @@ const levels = [
           #   #
            ###
             ##
+
 `,
-  `
+    solution:
+      "drUluuurrddLruulldDrddllluuRRDuuurrddLddLuUllddlluuRRddlllluuRRddrrddRRUULLLLddRRuurrruulDurruullDDrddLLLuuRRDuuurrddLddLuUddddddrruuLrddlluUUUruulllddddlluuuullddlluuRRddddRRuuLLrruuRRddLLrrddRRuuLLuullddddlluuuullddddRRuuLruuRRddLLrrddRRuuLLuullddddRRuuLrddlluUrrrrrrruulDrdLLLLLLrrrrruurruullDDDrdLddddrruuLrddlluUUULLddRRddrruuLrddlluUlluuLLddRRuurrruulDrdLLLuuRlddddlluuuuRRddLrddlluUrrrrruuruulldDDrdLLLuuRlddrrruuruulldDllddLrddRRUdlluuuurrrddLLLrrddddrruuLrddlluUUdlluuuurrrddLLrddlluUrrruulDrdLL",
+  },
+  {
+    stage: ` 
 #######
 #  .$ ###
 # .$.$  #
@@ -580,7 +771,10 @@ const levels = [
 #  .$  #
 ########
 `,
-  `
+    solution: "lLdLdRuuuLDrrruLdlluulldDRRRddlllUdrrUruRuuLrdrrdLdLrdLL",
+  },
+  {
+    stage: ` 
          #####
          #   #
 ########## * ###
@@ -591,7 +785,11 @@ const levels = [
          #   #
          #####
 `,
-  `
+    solution:
+      "dlllllURRRdllllllllllluurrrrrrrRRlllDullllllddrrrrrRRRRuulllllDullllddrrrRRRRRurrrdddlluUluRRlulllllllDullddrRRRRRRRuruuurrddrrddllddlluUluRullldRullldRRulllldRRRullllldRRRR",
+  },
+  {
+    stage: ` 
      ####
 ######  #####
 #@$    $  $ #
@@ -603,7 +801,11 @@ const levels = [
 ########   #
        #####
 `,
-  `
+    solution:
+      "DDrDDldRRRRRRRurrdLuuuuulLdLruulDrdddlDullddlluuuluuRRRRDDlddLdlUdrrrRuuLulDDurrddlLLruurrruRluLruulDlDDuurrrrdDDDuurruuLLLLdddlLulDDldRRluurrruuLruulDlDDuurrdddlLulDDldRuurrruuLulDDurrddlLulDDllldRurruruuullllddDDuurDD",
+  },
+  {
+    stage: ` 
  #########
  #   ##  ####
  # $        #
@@ -616,8 +818,13 @@ const levels = [
 #####$# ####
     #   #
     #####
+
 `,
-  `
+    solution:
+      "LLLddllUUddrruuLUUrurrruuullldDrddllURRlldddrrrrUUUUUruLLLulDDDrddlluRlddLLLdlluRuuRRllddRRRDrrddllUUrUUruuuulllulldRRRRlllDDldRlddrrRdrUdrrrruuuuuullulDDD",
+  },
+  {
+    stage: ` 
 ###########
 #    #    #
 # $@$$$$$ #
@@ -629,7 +836,11 @@ const levels = [
    #.  #
    #####
 `,
-  `
+    solution:
+      "drrrrrruulllDurrrddllLLLLuullddRRRluurDullDrrRDDDlddrUruLuuulldRurDDurrrruulDullDlddDrddlluRuuuururrdLdLruulDlDDDDlddrruLuuuuurrdLulDDDDDrdLuuurDluuuurrrrdLLLulDDDDuuuulllldRRRurDDDrdL",
+  },
+  {
+    stage: ` 
   #####
   # @ #
   # $ #
@@ -643,7 +854,11 @@ const levels = [
   # . #
   #####
 `,
-  `
+    solution:
+      "ldddllddrrUUUrruullDurrdddLrrrddllDDllddrrUdlluurDulUURldddrrUlluurDDuuUUrrrddlLrruullldDlddrrUdlluurDuuurrrddlLrruullldDllluurRllddrrrrrruulluuulldDuurrddLDrrrddlllllluurRDullddrRuuUrruullDDDuuurD",
+  },
+  {
+    stage: ` 
 ##############
 #.           #
 #.$ $ $ $ $  #
@@ -657,7 +872,11 @@ const levels = [
 #.          #
 #############
 `,
-  `
+    solution:
+      "UUruullllllllllldddddddrrrrrrrrrruULLuullddLLuuLrddrruurrddLruulldLdlLURuRRdRdLLrrrrrddlllllllllluuuuuuurrrrrrrrrrrddldLDururuullllllllllldddddddrrrrrrrrrruuLrddllllllllllddrrrrrrUdlllllluuuuuuuuurrrrrrrrrrrddldlddrddlllLLLLLLrrrDurrrrrruuluururuulllllllllllddddddDuuuuuuurrdLulDDDDDuuuuurrrrdLLLulDDDDuuuurrrrrrdLLLLLulDDDuuurrrrrrrrdLLLLLLLulDDuurrrrrrrrrrrddlULLLLLLLLLulDrrrrrrrrrrddlddrUUUruLLLLLLLLLLrrrrrrrrrddddddllllddrrUdrrUUUUUUddddddlllllLLLLrUdrruulLLrrrrrrRRlddrruUUUluurDDuuUruuLLLLLLLLLLrrrrrrrrrDDDlddrUldLLululldRRldRRlullldRRR",
+  },
+  {
+    stage: ` 
 ############
 #..  #     ###
 #..  # $  $  #
@@ -669,7 +888,11 @@ const levels = [
   #    #     #
   ############
 `,
-  `
+    solution:
+      "rdrRdddrruuLUUruulLulllldDuurrrrdrrddldlllulLLLLLdlUUUddrrrrruuurrdLulDDuurrrrdrrddldlllulLLLLLdlUUdrrrrruuurrrrdLLLulDDurrrrrrddldlllulLLLLLrrrrrrdrrruUruLLLLLulDDurrrrrdddlllulLLLLrrrddddllluRRdrUUUUrrdrrruuulllllDurrrrrdddlllulLLLdlUrrrrrdrrrdrddlllluLLdlluRdrUUUddrrdrruLLLLdlluRdrUrrdrrrruululllulLLLuLLrDrrrrrdrrrdrdLLLLLLUUdddlluRdrUrrrrruulllulLLLdLLUUddrUrrrrrdrrDrdLLLLLUUdddlluRdrUrrrruullulLLLLrrrrrdrDrdLLLLUUddrrruululLLLuLDrrrddddlluRdrUUUddrrruululLLLdLUUUruL",
+  },
+  {
+    stage: ` 
        ####
 ########  ####
 #   ##.....  #
@@ -684,7 +907,11 @@ const levels = [
      ##@#   #
       #######
 `,
-  `
+    solution:
+      "ululullluuuurRdRdRdRdRdRdRdrUUUUUruLdlUUUddrruuulLdlluurDrdddrdddddlluRdrUUUUruLdlUUUddrruuulLLulDrrdddrddddlllululululuurDrDrDrDrDululululllluurDldRRdRdRdRdRdRRdrUUUUruLdlUUUddrruuulLLLLrrrdddrddddlllululululuurDrDrDrDrDululululldRdRdRdRdRRdrUUUUruLdlUUUddrruuulLLLrrdddrddddlllulululuurDrDrDrDulululldRdRdRdRRdrUUUUruLdlUUUddrruuulLLrdddrddddlllululuurDrDrDululldRdRdRRdrUUUUruLdlUUUddrruuulLdddrddddllluluurDrDulldRdRRdrUUUUruLdlUUUddrddddllluurDldRRdrUUUUruLdlUU",
+  },
+  {
+    stage: ` 
 ####      ####
 #..########..#
 #*.*.....*.*.#
@@ -696,7 +923,11 @@ const levels = [
 #..########..#
 ####      ####
 `,
-  `
+    solution:
+      "UdDlUlDlDlDuruUlUlUdrdDlDDuurDurrrDLLLulDuUUrUddrrULdlUdrrrUddrDurDuUUdrUdDDurDuUrDrDDuulldRurDrDuluUrUUddllURUddllluRRdrUdrUdDD",
+  },
+  {
+    stage: ` 
     #####
    ##   ####
    # ..* $ #
@@ -707,7 +938,11 @@ const levels = [
 ##  #   ###
  ########
 `,
-  `
+    solution:
+      "uluLulldlddrRlllllddrrrrdrruLUUlllllddrrrRdrUllllluurrruururrdLrrdrruLLrddddLLdllulllluurrrrrUdlllllddrrrrdrruLUUlllllddrrUdlluurRRlddrRdrUU",
+  },
+  {
+    stage: ` 
 ######
 #    #
 # $  ####
@@ -717,7 +952,10 @@ const levels = [
    # @  #
    ######
 `,
-  `
+    solution: "uUluulDuulldRldRuRurDDDrddlUUddrrruuLrdLLdlU",
+  },
+  {
+    stage: ` 
    #####
 ####.  ##
 # $.$.  #
@@ -727,14 +965,22 @@ const levels = [
   #. .  #
   #######
 `,
-  `
+    solution:
+      "dRRRDuuUrrrddddllLuullluuRDldRuuRRddddrrruuuulLLrrrddlUruLddDrdL",
+  },
+  {
+    stage: ` 
 ############
 #    ... $ #
 # $$$*** $@#
 #    ... $ #
 ############
 `,
-  `
+    solution:
+      "uLLLrddllllUdllluurrRddrrrUrurrdLLrrdLLLLLLuulllddrRRRRlluullDldRRRRluulDldRR",
+  },
+  {
+    stage: ` 
 ##########
 ##       #
 #   #$#$ #
@@ -742,7 +988,11 @@ const levels = [
 # @###...#
 ##########
 `,
-  `
+    solution:
+      "UluRurrrrrrdddllullLrrrdrruLruulDDrdLuuullllldlddrUrrrRRurDluulllllDldRRRRRRuullDulllddrrRRluullDldRRRuurrdD",
+  },
+  {
+    stage: ` 
  ####
  #  #####
 ##$ ##  #
@@ -753,7 +1003,11 @@ const levels = [
  ##..    #
   ########
 `,
-  `
+    solution:
+      "LddddrrruLLdrrrruLLuUruulDDDDrdLLLuLuuurRlldddrdrruuuruulDDDDuuullldlluRRuulDDrdddrdrRuuuulLrrddddlluluuUluurDDDDuulldRurDurrrdddLrrrdLLL",
+  },
+  {
+    stage: ` 
 ##### ####
 #...# #  ####
 #...###  $  #
@@ -769,7 +1023,11 @@ const levels = [
 # ##    ####
 ###
 `,
-  `
+    solution:
+      "rRRllluuurrdDrdLurrRdLrddlUruulllddRRULuluullddddRRULdlUUUUruLdlUruLdlUruLdlUruLddrrrdddddlLdlluRRRRdrruLdlUUUUruLdlUruLdlUruLdlUUruLdddrrrdddddlllluurDldRRRRdrruLdlUUUUruLdlUruLdlUruLLrrdddrrrdDrdLLdlUUUUruLdlUruLdlUruLdlUUddrrrdddddrrrrruLLdllluuurrdDrdLLdlUUUUruLdlUruLdlUUUddrrdddddrrrrrrRurrdLLLLLLLLdlUUUUruLdlUruLdlUruLdlUdrrrdddddrrrrrrruLLLLdllluuurrdDrdLLdlUUUUruLdlUruLdlUruLrdddrrrddrrdddrUluurrrddLLruLLLLLdlUUUUruLdlUruLdlUUrdddrrrddrrrdddlUruLLLLdlUUUUruLdlUruLLrrddddddrrRurrddlUruLLLLdlUUUUruLdlUruLdlUrddrrrddrrrruUlluurRDDDDrdLLLLLLdlUUUUruLdlUruLddrrrddrrrruuuulDldRurDDDrdLLLLLLdlUUUUruLdlUUddrrrddrrrruurruLdlluurDDDDrdLLLLLLdlUUUUruLLdrrrddrrrruuluuuurDDDDDDrdLLLLLLdlUUUUruLdlUdrrrddrrrruurruuLdlluurDDDDDrdLLLLLLdlUUUUruLdrrddrrrruuuulllUluurDldRRRurDDDDDDrdLLLLLLdlUUUUUdrrddrrrruuuuuulLdlluurDldRRRurDDDDDDrdLLLLLLdlUUUU",
+  },
+  {
+    stage: ` 
 #######
 #. . .#
 # $$$ #
@@ -778,7 +1036,10 @@ const levels = [
 #. . .#
 #######
 `,
-  `
+    solution: "UdRlLDldRRRUrUULuLLDDDurUdRddlLuurD",
+  },
+  {
+    stage: ` 
       ####
 #######  #
 #     $  #
@@ -791,7 +1052,11 @@ const levels = [
  #  #######
  ####
 `,
-  `
+    solution:
+      "urDluLLLDlluRRdDrddldlluuUdddrddlUUrruruulDrrdddLLullUURRRdrUdddlluUdllddrUluRluurRuuullldRRurDDrDrrrdDrdLLLLLUlluuUdrRRlllddrrUdllddrUluRluurRdRUluuuRRRdrDDDDrdLLLLLUUdllddrUluRluurRuuullldRRurDurrrurDDDDDDrdLLLLLUUdllddrUluRdrU",
+  },
+  {
+    stage: ` 
    #########
    #   #   #
    #       #
@@ -802,7 +1067,11 @@ const levels = [
 #####@ #   #
     ########
 `,
-  `
+    solution:
+      "ulluurrUdllddrrUUddrRRdrruLLLLdlUlluurrrrrrDullllllddrrUdlluullddRRuurRddrrrdrruLLLLdlUrrrruullLLLLddRRUdlluurRddRRRdrruLuuuulllulldRDDllddlluuRRddrrUdrrRdrruLLLLdlUrrrruuuullLulD",
+  },
+  {
+    stage: ` 
 #####
 #...# #####
 #...###   #
@@ -816,7 +1085,11 @@ const levels = [
 ######   ######
      #####
 `,
-  `
+    solution:
+      "lulLDlUUUUUdddddlddrrUdlUUUUUUdddrrrddLLdlUUUUUluRdddrrrdrrurrdLLLrdLLLLdlUUUUluRddrrrDrrrrdrrdrruuruulDLLLLddrrULLLLLdLLLdlUUUrrrDulllUURUUdLrrrrrurrDDDDrdrddrruLdlUrrUruulDlLLdLLLLdLLLdlUUUrrrDulllUUlUUdRdrRurrrurrdddDrddrrrUruLLLLdLLLLdLLLdlUUUrrrDulllUUrULrrrrrurrdddDrddrUdrruulLLdLLLLdLLLdlUUUrrrDulllUUrurrrrurrdddDrdLLLLdLLLdlUUUUluURRdLulDrddrrrDrdLrddrruLdlUluLLdlUUUUUruLdddddrUdrruulLdlUUdrrrdrrrruuuuulldllLdlLddrrrdrruRlddLLLLdlUUUUUrrurrrurrdddDrrrruullDurrddlLLdLLLLdllluurrDullluurrurrdLLurrrurrdLLLLrrrrddDrdLLLLdLLLdlUUUUdrrUdrDrdLLLdlUUU",
+  },
+  {
+    stage: ` 
 ###############
 ###.#      ####
 ##..# $  $ #  #
@@ -830,7 +1103,11 @@ const levels = [
 #   @#  ##    #
 ###############
 `,
-  `
+    solution:
+      "llUluurrRuuurrrdrrrUrrrddlUUdddlllllldddrUrUdlluurRRRdddrrUUUUruullldlllullldddRRlllllddrUluRRRdLullddrUluRRdrUUUruLLdlUUdrrrrrdrrrurrrddlddddlluuullddlluuLLdlluRdrUUUruLLdlUrrdddrrddrruuLLLLdlluRdrUUUruLdlUUUdLdrrdddrrddrUruLLLLdlluRdrUUUruLLdlUrrrrrdLLrrrrrurrrddldLLLLLLLLuUruuuurrrrrdDuullddRDuluullldddLdddrrrrrrrruruullLdLLLLLLLUUdrddddlluRdrUUUruLdlUrruuurrdLulDDurrrdrDrrrrddlUruLLLdLLLLLruLLLLrrruurrrdrDrdLurrrdddddLUruLLLLLLLLuUruLLrddddlluRdrUUUruLruuurrrrrdDlddLLLLLddrrrrrrrdddlUUruLLLLLLLdlluRdrUUUddrrrrrrrruuulLuuLLLLulDDurrrdrDrdLLLLLrrrrurrrruulDrdLLLulDrdLLLL",
+  },
+  {
+    stage: ` 
        ########
        #  #   #
  ####### $$...#
@@ -844,7 +1121,11 @@ const levels = [
     #     #
     #######
 `,
-  `
+    solution:
+      "rrRuRUrurrdLrddlUrdddlUdlluRdrruuuuullLddDuuurrrddlLrruullldDldlllluuruuurrrrrrrDDuuluurDRRRlllldlllllldddlddrrrruruurrruUluRRRurrDDDuuLulDDDuulldddlllddrrrUUUUluRRRRllldddddllURdrUUUUluRRRurrDDuLulDDullddddllluRRdrUUUluRRRRllldddddlllldlluRuuRRRRdrUUUluRRRurrDLulDllddddddddlluRUddrUUUUUUUluRRRRllldddllddRdrUUUUUluRRRurDDDuullldddlllllddRRRRdrUUUUUluRRRurDDulllddddddddllllUUdRRRdrUUUUUUUluRRRurDllldddlllllddRRRRdrUUUUUluRRRlldddddddlllUluRRRdrUUUUUluRR",
+  },
+  {
+    stage: ` 
        #####
   ######   #
 ###    . $ #
@@ -858,7 +1139,11 @@ const levels = [
    #  #####
    ####
 `,
-  `
+    solution:
+      "rdDDDllllluuuuluRRldddddrrrddlUrurruuuuuulllldldddddrRRllluuuuururrrrrurrdLDDrdLLruuuLLddDDDrrddlLLLullluuuuururrRRRurDDDrdLLruuulllllldldddddrrrdrrrruulluUUlllUluRRRRRurDDDrdLLruuulllDullddrRllulldddddrrrdrrUUddlluRdrUlluulLrrddllluUrrrddddlUruuulllddrRRRluulllUUluRRurrrddllUluRRR",
+  },
+  {
+    stage: ` 
     ####
 #####  #####
 #    $   $ #
@@ -869,7 +1154,11 @@ const levels = [
    #   #
    #####
 `,
-  `
+    solution:
+      "llluRldlddrrUUrruuullLDDuurrrdrruLLLLulDLLDlluRRRRRRRdddllddlluulUUddrddrruurruuullllLdddrRRllluuurrDDuulldddrddrruuLuuurrrdrruLLLLulDlldlluRRRRDDuuRRRdddLruurruLLLLulDD",
+  },
+  {
+    stage: ` 
    ########
 ####    . #
 #  $ $ $. #
@@ -878,7 +1167,11 @@ const levels = [
 #  .  ####
 #######
 `,
-  `
+    solution:
+      "uuulllldLdddrruLdllluurrururrrrdddlLLrrruuulldRlulldldllddrrrrurrruUruLLdrddllldlllluurrurRRRurDllllldllddrrUdrruLdllluuuRdDldRuuuRRRRRlluRR",
+  },
+  {
+    stage: ` 
   #####
   #   #
 ###$.$#####
@@ -889,7 +1182,11 @@ const levels = [
   #   #
   #####
 `,
-  `
+    solution:
+      "luLLLuurDldDDllluurRllddrrrrdLuuURuullDurDDDDllluurRllddrrrrddllUdrruuluUrRRdrruLLLLuullddllddrR",
+  },
+  {
+    stage: ` 
  #####
  # @ ######
  # #..*   #
@@ -901,7 +1198,11 @@ const levels = [
     #   #
     #####
 `,
-  `
+    solution:
+      "rdrRRdrruLLLLdlllDDrdRRUUUllluurrDRRRddLruulldLuullddddrdrruUUdrruulLddddlluluuuurrDrrrdrrdLLLruulllullddddrdrruUUdrruulLddddddrruuLrddlluUUUUdddllulldRRRRddrruuLrddlluUUUrrrruuLL",
+  },
+  {
+    stage: ` 
      ######
    ###    ##
    #   ##  #
@@ -916,7 +1217,11 @@ const levels = [
    ##     ##
     #######
 `,
-  `
+    solution:
+      "rUdddllluluururrRllldlddrUddrrruulLUdrrddlUruuuRRDrDDlddrURRurrdLLLLrrddldllllulUUruuuurrdrdDlDRRRlluuulDuuurDDDDuuulllddddllluluuRuRRRRlddddlddrdrrrruruulLuuuuulDDullllldlddrUrUdlluRuRRRRlddddlddrdrrrruruulluuuuulDrddddrruuuuuulullldllDurrurrrdrdddddrrdLLLrddldlllluluulluuuurRRRRurDDDuullllllddrUluRRRRRurDDulllddddllUUUluRRRRRurDllllldddRdrUUUddlluuurRRRllllddRdrUUdlluurRR",
+  },
+  {
+    stage: ` 
      #######
      #  #  #
      #  $$ #
@@ -931,7 +1236,11 @@ const levels = [
      #######
 
 `,
-  `
+    solution:
+      "uRRRururuuluuuulDrdddDlLdLddrrurUruLddldlluuruuLDLLLLdlUrrrrruuUluurDDDDrdLLLLLLrrrrruuuuRRurDDDDrddlULLLLLLLdllUURDrrrrruuuurrrddlUruLLrddrDrdLLLLLLLLLrrrrruuuluurDDDDrdLLLLLUllDDRUUdrrrrrrrrddldlluUruLLLLLulDrrrrrdddrrdrUUUruLLLLLLLLDLUrrrdRurrrrdddllluUruLLLLLLrrruRdrrrruuuulllddDrdLLLLLuLDD",
+  },
+  {
+    stage: ` 
           ######
           #    #
 #####   ### ## #
@@ -947,7 +1256,11 @@ const levels = [
   #########  ##
           ####
 `,
-  `
+    solution:
+      "uUULullddRddllluuuuuuurrrrRRRdrddLUUddrrDrruuuuuuulllddDLLLLLLLLLulDDDDDrrdddrrruuUrrdLuuUUdrDRRuuullLLLLLulDDDDDrdddrrruUluRdrUUUUddrrruuullLLLLLLulDDDDrrddddrrruurrUluuuurrrdddlLdlUUUddrrruuullLLLLLulDDDDrddddrrruuluuRdrUUUddrrruuullLLLLLLulDDDuurrrrrrrrrruuurrrdddddddlluLLLLddrrdrrULLLLLuUUUddrrruuullLLLLLulDDDrdddddrrruUrrdRurrdrrdLdlUUruLLLdlUUluuuurrrdddlLdlUUUddrrruuullLLLLLulDDurrrrrdddrrrrrDDlddrruLdlUruLLLdlUUddrRurrddlUruuulllLdlUUUddrrruuullLLLLLLrrrrrrrrddrUrDDDDLLLdlUUdrrrddrruLdlUruurruuuuuuulllddrDLLLLLLLLLullDDrUrrrrrrrrdddlLdlUUUddrrruuullLLLLLuLDrrrrrrruRdrrDDDDDLLLdlUUdrrrrurruuuuuuullldDrdLLLLLLLLdlLuurDrrrrrrrdddlLdlUUUddrrruuullLLLLLDlUrrrrrdddddrrrrddrruLdlUruLLLdlUUdrrrruulllLdlUUUddrrruuullLLLLLLrrrrrdddlldRdddllluuuuUdddddrrruurUUUUddrrruuullLLLLLrdL",
+  },
+  {
+    stage: ` 
        #
      #####
    ### @ ###
@@ -959,7 +1272,11 @@ const levels = [
    ######  #
     ##   ##
 `,
-  `
+    solution:
+      "rDrrddlDlLuUddrruLdrrddlUUlldRurrddlUruuuullDlDLruruullDllddddrRRRuUddlllluuuurrurDrrrdddLrddlU",
+  },
+  {
+    stage: ` 
  ##############
  # @ * * * #  ##
  #$#  * *  #   #
@@ -975,7 +1292,11 @@ const levels = [
 #   #########  #
 #####       ####
 `,
-  `
+    solution:
+      "lDDDDDDDDDuuuuuuuuurrdddddddrRdrrUrruuuuurrrddddddddlllllllllldlluRRRRRRRRRRRlllllllllluuuuuuuuuurrdddddddrrdrruLrrruuuuurrrdddddddrddlUUUUUUUUdddddddllllllllllluuuuuuuuuurrdddrDrRdDDulUruLrdddrrruulLrrddllluluurDrDurruulDrdLuLrruuulDDurrrurrdLLLLrrrddddddddllllllllllluuuuuuuuuurrdddddR",
+  },
+  {
+    stage: ` 
  #############
  #    #  ##  #
  #$$$ # $$  $##
@@ -987,7 +1308,11 @@ const levels = [
 #   ###  ######
 ##### ####
 `,
-  `
+    solution:
+      "RRRRlluuuurruurDDDDuullllluurDldRRRRurDDulllluRRRurDDlllddlUruulldRRRRllddddlUUUruulldRRRlddddllluluuuuulllDDRddddrRRRdrUUUUruulldRRddddlllluuurDDldRRdrUUUUruulldRurDDldRRlddlllllldlluRRRRRRRRRllllllluulDrddlluRRRRRRRRlllllluuuulDDDrddlluRRRRRRdrUUUUruulldRurDDDlddllllluRRurDldRRdrUUUUruulldRurDDldRlddllllluuuuRlluurrrdDDDDldRRRdrUUUUruulldRurDDldddllllluuuRurDDDldRRRdrUUUUruulldRurDlddddllluuuuuullDDDDDldRRRRRdrUUUUUluurDldRddddllllluuuuuRurDDDDDldRRRR",
+  },
+  {
+    stage: ` 
      #########
      #       #
      #  $#$# #
@@ -1002,7 +1327,11 @@ const levels = [
    #...######
    #####
 `,
-  `
+    solution:
+      "dLuluLLLuluurrdrDDDDurDDLurrrdrrULLLululllulldRRRlluuurDrrdDDDlDurDrUluuuullDldRRluurrdDDRddlluRdrUluuuurrruulDrdLLLLulDDldRRluurrdDDDrdLuuuuurruuuurrrrrdddddlldDuurruulLLLulDrdLLLLulDDldRRluurrdDDDuuuurruuuurrrDDuurrddLdLLLulDrdLLLLulDDldRRluurrdDDurDDLuuuurruuuurrrdDrdLLLulDrdLLLLulDDldRRluurrdDDuuurruuuurDDuurrdddlLulDrdLLLLulDDldRRluurrdDrddrrdrrruLLLLruL",
+  },
+  {
+    stage: ` 
 ####     ####
 #  #######..###
 # $ $ $  #....#
@@ -1018,7 +1347,11 @@ const levels = [
 #  #######..###
 ####     ####
 `,
-  `
+    solution:
+      "lddddllUUlDDuurUUULLdRDDDuuuurDDDDDrruuuuuLrdddddlluuuuRurDDDDuuulldRuruuuLDDruuuulDDuullDRurrddlUruLLdlUrrrddddlUUUruLLrrdddddDDulUUUUUruLdddddllllddlLuuRRRRuRDDDDuRuuUUUruLLUrdddddllllddlUluRRRRlllluuRDRRRRDDDrDuuuUUUUruLddddlllllldRRRlluuurDldRRRDDDuullddddlUUUluRRRRuRDDurUUUddlllluuuulDLDlLdddRRRRRllllluRRRRRRDDulllllldDRUluRRRRRRRluRRDDDuurUUUULdddlllluuulDllDldRRRRlllddddRUUluRRRRluRRDllllllLDlluRRRRRRRRRuRDlllddddlUUUluRRRRRRUUUUdddrDlllllllllllldddRUUluRRRRRRRRRRllluuullDldRRRRRRRDDurUUUdddlllllllllllldddddrUUURRllUluRRRRRRRRRRllllllllluRRRRRRRRRRDrUUdllllluulDldRRRRRRdrUllllllllllluRRuulDDldRRRRRRRRRdrUUUddlllluulllDldRRRRRRRlllddddlllUUluRRRRRRRRUUdllllullllllluuRDldRRRllluuuurDDldRRRRDldRRRRRRRRlllluuullDDldRRRRRRdrUlllllllluuuRuLLDlluurDldRRDDldRRRRRRRRRllluuuulLDDDldRRRRRlluuuullLLDuLdlluurDldRRRDDldRRRRRRluuuulllDDDldRRRRllldddddLUUUluRRRRRRRRllllllddddlLUUUluRRRRRRRRllllllllldddddrUUUUluRRRRRRRRlddddlLLLLullddrUUUUluRRRRRRR",
+  },
+  {
+    stage: ` 
       #####
 #######   #
 #   ##.   #
@@ -1033,7 +1366,11 @@ const levels = [
  #...  #####
  #######
 `,
-  `
+    solution:
+      "LLLrruurrrruullUUlldlllldRlddrrDDLddrrrUdllluurDuuulUluurrrurruurrdLLrdddrrrrrrdddlldlldllulLLruurrrruurrdDuulluLdlUUllddRDulullllddrUddrdDrrddlLLuuUdrrrrrdrruLLLLLLulDDuuUUluuRRRurruurrdLulDrdLLrrdrrdddRDuluurrrrdddlLdLLLLLLLLulDrrruuRRRRuurrdDuullddRDuluurrrrdddlLdLLLLLLLLDLUrrruurrrrrDrdLLLLLLLruuruulUlllluurDldRRRlllddrUluRRldddrdDlUUUUluRdddddrrruurrrDuruulLLrrrrrdDuurrdLrddlLdllLLLLLLulDrrruurrrrrDrdLLLLLLLLrruuruurrrrrDDurrddlLulDrdLLLLLLL",
+  },
+  {
+    stage: ` 
  ####  ######
  #  ####    #
 ##*   * **  #
@@ -1046,7 +1383,11 @@ const levels = [
  #  #####   #
  ####   #####
 `,
-  `
+    solution:
+      "uruuulllDldlldlllluRdrrruullDurrddlLrUrrrurRurrdddllULLLLuRRllddlluuRRdrrrrdrruuullDurrdLrddldDLLullDurrdLddLLuuRurDrrrrdddllUUddrruuulLLulldRRlllddrrULulllddRRUruLrurrdLrRdddrruuLrddlluU",
+  },
+  {
+    stage: ` 
  #########
  #   #   #
  # $$$$$ #
@@ -1057,7 +1398,11 @@ const levels = [
 ##  ..... #
  ##########
 `,
-  `
+    solution:
+      "rrruuullDDRdrdddlllllluluuRuuurrDDRRuurrdDDDuuuullddRllluulldddlddrdrrrrrrruLLLLrrruululuurrdDDDuulllluulldddlddrdrrrrrrruLLLdlllluluuruRRRdRRurDDulllullldlddrdrrrrrrruLLdllllluUrURRRRurDDullllldlddrrrrrrruLdlllllluluuRRRRRRurDDDrdLLLLrrruuullluRuRurDDDDDrdLLLrruuulluRurDDDDrdLLruuulllluuRRRurDDDDDrdLuuulllllluRRRRRurDDDDuulllllluuRRRRRurDDDD",
+  },
+  {
+    stage: ` 
    #######
    #     #
    # $ $ ##
@@ -1070,7 +1415,11 @@ const levels = [
       #  #
       ####
 `,
-  `
+    solution:
+      "RddrrUUrruulDrdLuLDruuuulldRurDDrdLuuulllldRRRurDDrddlUdlDDrrrrurruuLLLLrrrrddlUruLLLrrddldlllluurrUrrrddlUruLLrdddlllllluuRRRllllLdRllluRRRRRRddrddlUUUdllUluR",
+  },
+  {
+    stage: ` 
 #####
 #   ######
 # $ .. $ #
@@ -1078,7 +1427,11 @@ const levels = [
  #  .. $ #
  #########
 `,
-  `
+    solution:
+      "dLLrruuLDLLulldRluulldRurDrddllURuulldRurDrrRddLrurrdLLrruuLLLLLulldRRRllddrUluR",
+  },
+  {
+    stage: ` 
   #####
   #   ######
 ###$#.     #
@@ -1087,7 +1440,11 @@ const levels = [
 ####    ####
    ######
 `,
-  `
+    solution:
+      "uRRRddrrUUddlluulldRurRuullDDrruRRRddrruuLLLLrrddLdlllULulldRRuuurrDrrrddrUruLLLL",
+  },
+  {
+    stage: ` 
     #####
 #####   #
 #   $ @ #
@@ -1101,7 +1458,11 @@ const levels = [
    #    ###   #
    ###### #####
 `,
-  `
+    solution:
+      "lLLDlluRRRRurrdLdddllllddrrdddrrUUUUUddddrrrrrdrruLLLLLLrrrrruuruulDDDullluuurDDldRRluullllllllddrrdddrrUUUUddddlluuulluurrrRRRllddddrrrrrdrruLLLLLLrrrrruUruulDDDulluuulDlllllllddrrdddrrUUUUddddlluuulluurrrRllllUUrurRurrdLdDDllllddrrdddrruuuUdddrrrrrdrruLuulllUruLddrrrddLLLLLdlUUUdddlluuRlddrruUllulUluRRlluururRurDDulldlDldRuulluRRRRurD",
+  },
+  {
+    stage: ` 
 #######
 #  *  #
 # @.$ #
@@ -1112,7 +1473,10 @@ const levels = [
 #  .  #
 #######
 `,
-  `
+    solution: "uRddrruLLulldRldRddlddrUUddrrruulDrdLuuUUruuLDD",
+  },
+  {
+    stage: ` 
   #########
   #    #  #
 ### #$  $ ####
@@ -1127,7 +1491,11 @@ const levels = [
  #  ########
  ####
 `,
-  `
+    solution:
+      "ruuluurDrDulllDrRdRRRurrrDrrddllLLuUluRuuuulDllulDDDrDulldRdRRdrUruulUruLrddddlUUUdddllluurDluuuulldDllddRRRRdRRdrUUdllluurDldRRdrruulDrdLrdLrrrrruulDrdLLLddllllLUUUUruulldRurDldRRllddddrrrrruuLuuulDllldllUluRRRurDldRRRuruulDruuulDrdddDlllluuuurRRurDlllldllDullddrRRRurDldRRRlllddlllUUruuullddRRRRurDldRRllddddLLdlUUUUUruuullddRRRRurDldRlddddrrrrrurruuuluLruLLrrddrruuLLLrddDrdLL",
+  },
+  {
+    stage: ` 
    ##########
 ####......  #
 #   .....#  #
@@ -1142,7 +1510,11 @@ const levels = [
    #   #     #
    ###########
 `,
-  `
+    solution:
+      "dddrruUddlluuRUUUluRRldddldddrrururruRUUUdlllUrrrddddllluRRdrUUdlllddldlluuruuuurrrrrrdLLLullldddlddddrRRUrUUluRRdrUUdlldddlllluuruuuurrrrrrdLLrddlldddrUUluRdrUUdldddllddrUUddrUUUUdddrrddrruLdlUruLLrddrrrruuuuulldlDuruuUUllulldRRldddlluRdrUUdldddllllluuruuuurrrrrrdLddldddlUUluRRdrUUUruuLLdRurDldddlldddddrUUUUluRdrUUUUruLddddlddddrrururuuuuUruLLrddddddldDllluuuurRRlllddddrrddrruLdlUruLLrruuruUUUUruLddddllllldddddrUUUUluRdrUUUUdddrrrdrrddddLLLdlUruLLrruuruullllldddddrUUUUluRdrUUUddldddllllluuruuuurrrrRdddrrrdrrddlLulDDlddrruLdlUruLLrurruuullllldddddrUUUUluRdrUUUddrrrdddrDrdLLLdlUruLLrurruuullllllLrrdddlluUlUUUluRRRRlllddddrruLdlUUUluRRRlldddrdddrUUddddrrUUUUluRdrUUdllLLdlUUUluRR",
+  },
+  {
+    stage: ` 
       #########
       #       #
       #$ $$$  #
@@ -1157,7 +1529,11 @@ const levels = [
 ########   #
        #####
 `,
-  `
+    solution:
+      "LLulldDDDrUllldddrrrUdllluuurrdDrdLLLLLLrrrrruuuuuurrdLulDDDDDrdLLLLLrruuurrrUluurrdLulDDDDDrdLLLLrrruuuuurrrdLLulDDDDrdLLLulDrrrurUUluurrdLulDDDDrdLLLdLLLrrUrrrruuuuuuuulDDDDDDDrdLLLuLLLrrDrrruuuuuuuurrDDDrdLLulDDDDrdLLLdLLrUrrruuuuuuuurrrrDLLLulDDDDDDDrdLLLuLLrDrrruuuuuuurrrrrrddLLLLLulDDDDDrdLLLdLUrrruuuuuuurrrrrDrdLLLLLulDDDDDrdLLLuLDrrruuuuuuurrrrDrdLLLLulDDDDDuuuurrrrrdddllUUddddddllUULLLrrrUUUluurrdLulDDDDrdLLruuullddDrruuuuuuurrrrddLLLulDDDDDrdLL",
+  },
+  {
+    stage: ` 
  ##### ######
  #   ###    #
 ## $ $ #$ #$#
@@ -1171,7 +1547,11 @@ const levels = [
      ####  ##
         ####
 `,
-  `
+    solution:
+      "rRdddrruuuuurrDDuulldddddlluuuRldddrrrrruuLuuulldDDDuulldddrRRRdrUUdllluuuRluulDurrrdDlldddlluuuRurDDDuulldddrRRRdddlUrurUllldRRddlllulldRRRdrUUruulldRluuuullllluullddRRRRRRurDDDDuuullllllllddrdrRRRluRdRRRRRlluuullllluulDldRRRRRRurDDullluLdlluurDldRRRRRurDlldDldRRRRllllllllddrUluRRRRRRRllllllddrUluRRRRRlDDldRRRdrUU",
+  },
+  {
+    stage: ` 
 ####
 #  #
 #  ##########
@@ -1186,7 +1566,11 @@ const levels = [
 #  #    ###
 #########
 `,
-  `
+    solution:
+      "lddddllluuuuuuurrrdrrRddRddLruuluullluurrDulldllldddddddrrrurrUrruuluuLuLLLLrrrrdrddrddlldlldlluullluuuuuurrDrrrdRullllDDrdddddrruuuurUUddldddrrurruuluuLuLLLLrrrrdrddrddlldlldlluuuuLLLdlUUUruurrDDDrdddddrruuuuruUruLLLLrrrdddlddddlluuuuLLLdlUUruuurrDDDrdddddrruuRUUUUruLLLLrrdrrrddLrrddlLUlldddlluuuuLLLdlUruuuurrDDDDDrdddrruuurUUUruLLLLrrdrrrddLdlldddlluuLLLdlUruuuuuurrDDDDDrdddrruuurUUUruLLLLrrrdddlddddlluuLLruulluuuurrDDDrdddddrrurUUUUUruLLLLrrrdddrrrdLLdllddlluuuuLLLdDuuuuuurrDDDrdddddrruurUUUUruLLLLrrrdddlddddlluuuuLLruulluurrDDDDrddddrruuurrrrrruLLruLdLUdLdlUUUruLLLLrrrdddlddddlluullluUUUUUrrDDDuurrrurrrrdDLLrddrruLdlUdlluUruLLLLrrrdddlddddlluuuuLLruulluurrDDDuurrrurrrrddLLrddlluUruLLLLrrrdddlddddlluuuuululluuluurDDrrDrrrrdddlddddlluullluUUdddrrruuLLrrddllluUddlddrUUrrddrrruruuuuuullllDDrdLLrDrdLL",
+  },
+  {
+    stage: ` 
          #####
         #     #
        #  $##  #
@@ -1199,6 +1583,9 @@ const levels = [
    #......#####
     ############
 `,
+    solution:
+      "rdrrruLuLDrdLrrrrULuLDrrruLuuururrddlLulDDDDldLLruuRdrrurrruruuuLLddllldDrdLulDurrrrruruLLLLulDDDrdLLulDlluRRdrruuurrDurrddlLLruulldDrdLLLulDllluRRdrruRdrruruulldDrdLLLLLuRRRdrruruuruuruulllDDDlddDrdLLLLurrrrruuLulDDDrdLLruuurrruuLrruullldlldlddRluururrDDlDDDldRurruuLulDDDllldR",
+  },
 ];
 
 export default levels;

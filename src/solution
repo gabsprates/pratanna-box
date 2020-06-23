@@ -1,0 +1,35 @@
+// solution
+const solution = useMemo(() => setup.solution.split(""), [setup.solution]);
+const step = useRef(0);
+useEffect(() => {
+  const keydown = (key: KEYS) => {
+    window.dispatchEvent(new KeyboardEvent("keydown", { key }));
+  };
+
+  const moves: { [key: string]: () => void } = {
+    l: () => keydown(KEYS.LEFT),
+    u: () => keydown(KEYS.UP),
+    d: () => keydown(KEYS.DOWN),
+    r: () => keydown(KEYS.RIGHT),
+  };
+  setTimeout(() => {
+    const timer = requestAnimationFrame(function run() {
+      console.log(setup.stage, step.current, solution[step.current]);
+
+      if (!solution[step.current]) {
+        step.current = 0;
+        cancelAnimationFrame(timer);
+        return;
+      }
+
+      const _step = solution[step.current].toLowerCase();
+      if (moves[_step]) moves[_step]();
+
+      step.current++;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(run);
+      });
+    });
+  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [solution]);
