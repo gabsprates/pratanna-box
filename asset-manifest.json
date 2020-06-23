@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/pratanna-box/static/css/main.d775ce09.chunk.css",
+    "main.js": "/pratanna-box/static/js/main.3cec0683.chunk.js",
+    "main.js.map": "/pratanna-box/static/js/main.3cec0683.chunk.js.map",
+    "runtime-main.js": "/pratanna-box/static/js/runtime-main.67f36024.js",
+    "runtime-main.js.map": "/pratanna-box/static/js/runtime-main.67f36024.js.map",
+    "static/js/2.7dee3560.chunk.js": "/pratanna-box/static/js/2.7dee3560.chunk.js",
+    "static/js/2.7dee3560.chunk.js.map": "/pratanna-box/static/js/2.7dee3560.chunk.js.map",
+    "index.html": "/pratanna-box/index.html",
+    "precache-manifest.e4eb8b280d9ed1d7f99ffeb4ec1dcab2.js": "/pratanna-box/precache-manifest.e4eb8b280d9ed1d7f99ffeb4ec1dcab2.js",
+    "service-worker.js": "/pratanna-box/service-worker.js",
+    "static/css/main.d775ce09.chunk.css.map": "/pratanna-box/static/css/main.d775ce09.chunk.css.map",
+    "static/js/2.7dee3560.chunk.js.LICENSE.txt": "/pratanna-box/static/js/2.7dee3560.chunk.js.LICENSE.txt",
+    "static/media/github.svg": "/pratanna-box/static/media/github.74f58ac7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67f36024.js",
+    "static/js/2.7dee3560.chunk.js",
+    "static/css/main.d775ce09.chunk.css",
+    "static/js/main.3cec0683.chunk.js"
+  ]
+}
