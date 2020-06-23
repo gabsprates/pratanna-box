@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useLayoutEffect,
   useCallback,
+  useRef,
 } from "react";
 import "./App.css";
 import github from "./github.svg";
@@ -20,11 +21,11 @@ enum KEYS {
 }
 
 function App() {
-  const [current, setCurrent] = useState(0);
-  useLayoutEffect(() => {
-    const initialLevel = +(localStorage.getItem("level") || 0);
-    setCurrent(initialLevel > 99 ? 99 : initialLevel);
+  const storedLevel = useMemo(() => {
+    const currentLevel = +(localStorage.getItem("level") || 0);
+    return currentLevel > 99 ? 99 : currentLevel;
   }, []);
+  const [current, setCurrent] = useState(storedLevel);
 
   const handleChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
     setCurrent(+e.target.value);
@@ -90,7 +91,6 @@ const Game = ({
   onFinish: () => void;
 }) => {
   const [reset, setReset] = useState(0);
-  console.log(setup);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const game = useMemo(() => createGame(setup.stage), [setup, reset]);
 
@@ -100,122 +100,48 @@ const Game = ({
   const [boxes, setBoxesPosition] = useState<BoxesObj>(game.boxes);
   useLayoutEffect(() => setBoxesPosition({ ...game.boxes }), [game.boxes]);
 
+  const createCanMove = (direction: KEYS) => () => {
+    const position = getNewPosition(direction)(player);
+    if (game.stage[position.y][position.x] === chars.wall) return false;
+    if (!boxes[`${position.x},${position.y}`]) return true;
+
+    const boxPosition = getNewPosition(direction)(position);
+    if (
+      game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
+      !boxes[`${boxPosition.x},${boxPosition.y}`]
+    ) {
+      return true;
+    }
+
+    return false;
+  };
+
+  const createMovement = (direction: KEYS) => () => {
+    const position = getNewPosition(direction)(player);
+    setPlayerPosition({ ...position });
+    if (boxes[`${position.x},${position.y}`]) {
+      const boxPosition = getNewPosition(direction)(position);
+      setBoxesPosition({
+        ...boxes,
+        [`${position.x},${position.y}`]: 0,
+        [`${boxPosition.x},${boxPosition.y}`]:
+          game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
+      });
+    }
+  };
+
   const canMove: { [key in KEYS]: () => boolean } = {
-    [KEYS.UP]: () => {
-      const position = getNewPosition[KEYS.UP](player);
-      if (game.stage[position.y][position.x] === chars.wall) return false;
-      if (!boxes[`${position.x},${position.y}`]) return true;
-
-      const boxPosition = getNewPosition[KEYS.UP](position);
-      if (
-        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-        !boxes[`${boxPosition.x},${boxPosition.y}`]
-      ) {
-        return true;
-      }
-
-      return false;
-    },
-    [KEYS.LEFT]: () => {
-      const position = getNewPosition[KEYS.LEFT](player);
-      if (game.stage[position.y][position.x] === chars.wall) return false;
-      if (!boxes[`${position.x},${position.y}`]) return true;
-
-      const boxPosition = getNewPosition[KEYS.LEFT](position);
-      if (
-        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-        !boxes[`${boxPosition.x},${boxPosition.y}`]
-      ) {
-        return true;
-      }
-
-      return false;
-    },
-    [KEYS.DOWN]: () => {
-      const position = getNewPosition[KEYS.DOWN](player);
-      if (game.stage[position.y][position.x] === chars.wall) return false;
-      if (!boxes[`${position.x},${position.y}`]) return true;
-
-      const boxPosition = getNewPosition[KEYS.DOWN](position);
-      if (
-        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-        !boxes[`${boxPosition.x},${boxPosition.y}`]
-      ) {
-        return true;
-      }
-
-      return false;
-    },
-    [KEYS.RIGHT]: () => {
-      const position = getNewPosition[KEYS.RIGHT](player);
-      if (game.stage[position.y][position.x] === chars.wall) return false;
-      if (!boxes[`${position.x},${position.y}`]) return true;
-
-      const boxPosition = getNewPosition[KEYS.RIGHT](position);
-      if (
-        game.stage[boxPosition.y][boxPosition.x] !== chars.wall &&
-        !boxes[`${boxPosition.x},${boxPosition.y}`]
-      ) {
-        return true;
-      }
-
-      return false;
-    },
+    [KEYS.UP]: createCanMove(KEYS.UP),
+    [KEYS.LEFT]: createCanMove(KEYS.LEFT),
+    [KEYS.DOWN]: createCanMove(KEYS.DOWN),
+    [KEYS.RIGHT]: createCanMove(KEYS.RIGHT),
   };
 
   const movements: { [key in KEYS]: () => void } = {
-    [KEYS.UP]: () => {
-      const position = getNewPosition[KEYS.UP](player);
-      setPlayerPosition({ ...position });
-      if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = getNewPosition[KEYS.UP](position);
-        setBoxesPosition({
-          ...boxes,
-          [`${position.x},${position.y}`]: 0,
-          [`${boxPosition.x},${boxPosition.y}`]:
-            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
-        });
-      }
-    },
-    [KEYS.LEFT]: () => {
-      const position = getNewPosition[KEYS.LEFT](player);
-      setPlayerPosition({ ...position });
-      if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = getNewPosition[KEYS.LEFT](position);
-        setBoxesPosition({
-          ...boxes,
-          [`${position.x},${position.y}`]: 0,
-          [`${boxPosition.x},${boxPosition.y}`]:
-            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
-        });
-      }
-    },
-    [KEYS.DOWN]: () => {
-      const position = getNewPosition[KEYS.DOWN](player);
-      setPlayerPosition({ ...position });
-      if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = getNewPosition[KEYS.DOWN](position);
-        setBoxesPosition({
-          ...boxes,
-          [`${position.x},${position.y}`]: 0,
-          [`${boxPosition.x},${boxPosition.y}`]:
-            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
-        });
-      }
-    },
-    [KEYS.RIGHT]: () => {
-      const position = getNewPosition[KEYS.RIGHT](player);
-      setPlayerPosition({ ...position });
-      if (boxes[`${position.x},${position.y}`]) {
-        const boxPosition = getNewPosition[KEYS.RIGHT](position);
-        setBoxesPosition({
-          ...boxes,
-          [`${position.x},${position.y}`]: 0,
-          [`${boxPosition.x},${boxPosition.y}`]:
-            game.stage[boxPosition.y][boxPosition.x] === chars.target ? 1 : -1,
-        });
-      }
-    },
+    [KEYS.UP]: createMovement(KEYS.UP),
+    [KEYS.LEFT]: createMovement(KEYS.LEFT),
+    [KEYS.DOWN]: createMovement(KEYS.DOWN),
+    [KEYS.RIGHT]: createMovement(KEYS.RIGHT),
   };
 
   useEffect(() => {
@@ -313,13 +239,15 @@ const Game = ({
   );
 };
 
-const getNewPosition: {
-  [key in KEYS]: (position: Coordinates) => Coordinates;
-} = {
-  [KEYS.UP]: (position) => ({ ...position, y: position.y - 1 }),
-  [KEYS.LEFT]: (position) => ({ ...position, x: position.x - 1 }),
-  [KEYS.DOWN]: (position) => ({ ...position, y: position.y + 1 }),
-  [KEYS.RIGHT]: (position) => ({ ...position, x: position.x + 1 }),
+const getNewPosition = (direction: KEYS) => {
+  const moves: { [dir in KEYS]: (p: Coordinates) => Coordinates } = {
+    [KEYS.UP]: (position) => ({ ...position, y: position.y - 1 }),
+    [KEYS.LEFT]: (position) => ({ ...position, x: position.x - 1 }),
+    [KEYS.DOWN]: (position) => ({ ...position, y: position.y + 1 }),
+    [KEYS.RIGHT]: (position) => ({ ...position, x: position.x + 1 }),
+  };
+
+  return moves[direction];
 };
 
 export default App;
